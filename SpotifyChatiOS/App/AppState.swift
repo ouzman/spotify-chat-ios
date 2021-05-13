@@ -15,5 +15,5 @@ class AppState: ObservableObject {
     private init() {}
     
     @Published var apiKey: String?
-    @Published var isLoggedIn: Bool = false
+    @Published var activeScene: ActiveScene = .login
 }

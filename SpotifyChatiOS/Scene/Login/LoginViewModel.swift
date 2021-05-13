@@ -32,7 +32,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
             }
             
             authSession.presentationContextProvider = self
-            authSession.prefersEphemeralWebBrowserSession = true
+            authSession.prefersEphemeralWebBrowserSession = false
             authSession.start()
         }
         
@@ -52,6 +52,6 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
         guard let url = URLComponents.init(url: url, resolvingAgainstBaseURL: false) else { return }
         let apiKey = url.queryItems?.first(where: { $0.name == "apikey" })?.value
         AppState.instance.apiKey = apiKey
-        AppState.instance.isLoggedIn = true
+        AppState.instance.activeScene = .chatList
     }
 }

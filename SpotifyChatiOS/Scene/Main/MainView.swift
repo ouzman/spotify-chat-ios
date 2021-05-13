@@ -16,13 +16,13 @@ struct MainView: View {
             VStack {
                 Text("Mobile File Sharing App")
                 NavigationLink(destination: LoginView(viewModel: LoginViewModel()),
-                               tag: false,
-                               selection: Binding<Bool?>($state.isLoggedIn)) {
+                               tag: ActiveScene.login,
+                               selection: Binding<ActiveScene?>($state.activeScene)) {
                     EmptyView()
                 }
-                NavigationLink(destination: ChatList(viewModel: ChatListViewModel()),
-                               tag: true,
-                               selection: Binding<Bool?>($state.isLoggedIn)) {
+                NavigationLink(destination: ChatView().environmentObject(state),
+                               tag: ActiveScene.chatList,
+                               selection: Binding<ActiveScene?>($state.activeScene)) {
                     EmptyView()
                 }
             }

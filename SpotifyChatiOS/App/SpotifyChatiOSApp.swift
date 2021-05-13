@@ -11,7 +11,8 @@ import SwiftUI
 struct SpotifyChatiOSApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView().environmentObject(AppState.instance)
+            MainView()
+                .environmentObject(AppState.instance)
         }
     }
 }
