@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3A5C94264DAE2100863F02 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C93264DAE2100863F02 /* AppState.swift */; };
+		1C3A5C99264DB1D100863F02 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C98264DB1D100863F02 /* ChatList.swift */; };
+		1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C9C264DB1EC00863F02 /* MainView.swift */; };
+		1C3A5C9F264DB3AB00863F02 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */; };
 		1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */; };
-		1C4D197B264D8D5700C91A26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D197A264D8D5700C91A26 /* ContentView.swift */; };
 		1C4D197D264D8D5A00C91A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D197C264D8D5A00C91A26 /* Assets.xcassets */; };
 		1C4D1980264D8D5A00C91A26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D197F264D8D5A00C91A26 /* Preview Assets.xcassets */; };
 		1C4D198B264D8D5A00C91A26 /* SpotifyChatiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D198A264D8D5A00C91A26 /* SpotifyChatiOSTests.swift */; };
 		1C4D1996264D8D5A00C91A26 /* SpotifyChatiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D1995264D8D5A00C91A26 /* SpotifyChatiOSUITests.swift */; };
+		1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D19A5264D91E400C91A26 /* LoginView.swift */; };
+		1C4D19A9264D962300C91A26 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D19A8264D962300C91A26 /* Colors.xcassets */; };
+		1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C3A5C93264DAE2100863F02 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		1C3A5C98264DB1D100863F02 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		1C3A5C9C264DB1EC00863F02 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		1C4D1975264D8D5600C91A26 /* SpotifyChatiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyChatiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyChatiOSApp.swift; sourceTree = "<group>"; };
-		1C4D197A264D8D5700C91A26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C4D197C264D8D5A00C91A26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C4D197F264D8D5A00C91A26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1C4D1981264D8D5A00C91A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +54,9 @@
 		1C4D1991264D8D5A00C91A26 /* SpotifyChatiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotifyChatiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4D1995264D8D5A00C91A26 /* SpotifyChatiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyChatiOSUITests.swift; sourceTree = "<group>"; };
 		1C4D1997264D8D5A00C91A26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C4D19A5264D91E400C91A26 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1C4D19A8264D962300C91A26 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3A5C92264DAE0E00863F02 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */,
+				1C3A5C93264DAE2100863F02 /* AppState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1C3A5C9A264DB1D500863F02 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A5C98264DB1D100863F02 /* ChatList.swift */,
+				1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		1C3A5C9B264DB1E300863F02 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A5C9C264DB1EC00863F02 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		1C4D196C264D8D5600C91A26 = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +133,11 @@
 		1C4D1977264D8D5700C91A26 /* SpotifyChatiOS */ = {
 			isa = PBXGroup;
 			children = (
-				1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */,
-				1C4D197A264D8D5700C91A26 /* ContentView.swift */,
+				1C3A5C92264DAE0E00863F02 /* App */,
+				1C4D19A3264D91A700C91A26 /* Scene */,
 				1C4D197C264D8D5A00C91A26 /* Assets.xcassets */,
 				1C4D1981264D8D5A00C91A26 /* Info.plist */,
+				1C4D19A7264D960B00C91A26 /* Supporting Files */,
 				1C4D197E264D8D5A00C91A26 /* Preview Content */,
 			);
 			path = SpotifyChatiOS;
@@ -128,6 +167,33 @@
 				1C4D1997264D8D5A00C91A26 /* Info.plist */,
 			);
 			path = SpotifyChatiOSUITests;
+			sourceTree = "<group>";
+		};
+		1C4D19A3264D91A700C91A26 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A5C9B264DB1E300863F02 /* Main */,
+				1C4D19A4264D91BB00C91A26 /* Login */,
+				1C3A5C9A264DB1D500863F02 /* ChatList */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		1C4D19A4264D91BB00C91A26 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1C4D19A5264D91E400C91A26 /* LoginView.swift */,
+				1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1C4D19A7264D960B00C91A26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C4D19A8264D962300C91A26 /* Colors.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C4D19A9264D962300C91A26 /* Colors.xcassets in Resources */,
 				1C4D1980264D8D5A00C91A26 /* Preview Assets.xcassets in Resources */,
 				1C4D197D264D8D5A00C91A26 /* Assets.xcassets in Resources */,
 			);
@@ -259,8 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C4D197B264D8D5700C91A26 /* ContentView.swift in Sources */,
+				1C3A5C99264DB1D100863F02 /* ChatList.swift in Sources */,
+				1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */,
+				1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */,
+				1C3A5C94264DAE2100863F02 /* AppState.swift in Sources */,
+				1C3A5C9F264DB3AB00863F02 /* ChatListViewModel.swift in Sources */,
 				1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */,
+				1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,12 +493,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpotifyChatiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SpotifyChatiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,12 +514,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SpotifyChatiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SpotifyChatiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,7 +539,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOSTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,7 +560,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOSTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,7 +579,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOSUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -526,7 +598,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzhanuzman.SpotifyChatiOSUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ouzman.SpotifyChatiOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
