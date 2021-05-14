@@ -196,7 +196,6 @@
 				1C4D19A3264D91A700C91A26 /* Scene */,
 				1C3A5CB0264DD38400863F02 /* Service */,
 				1C3A5CAB264DCF8A00863F02 /* Model */,
-				1C4D197C264D8D5A00C91A26 /* Assets.xcassets */,
 				1C4D1981264D8D5A00C91A26 /* Info.plist */,
 				1C4D19A7264D960B00C91A26 /* Supporting Files */,
 				1C4D197E264D8D5A00C91A26 /* Preview Content */,
@@ -254,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				1C4D19A8264D962300C91A26 /* Colors.xcassets */,
+				1C4D197C264D8D5A00C91A26 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
