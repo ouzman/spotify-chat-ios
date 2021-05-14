@@ -32,8 +32,8 @@ struct ChatListView: View {
             Spacer()
         })
         .edgesIgnoringSafeArea(.all)
-        .navigationBarHidden(false)
         .navigationBarBackButtonHidden(true)
+        .navigationBarItems(trailing: LogoutButton())
     }
 }
 

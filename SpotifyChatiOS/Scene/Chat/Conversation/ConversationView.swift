@@ -31,9 +31,9 @@ struct ConversationView: View {
             Spacer()
         })
         .edgesIgnoringSafeArea(.all)
-        .navigationBarHidden(false)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)
+        .navigationBarItems(leading: backButton,
+                            trailing: LogoutButton())
     }
     
     var backButton: some View {

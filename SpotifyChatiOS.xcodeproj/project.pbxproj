@@ -28,6 +28,7 @@
 		1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D19A5264D91E400C91A26 /* LoginView.swift */; };
 		1C4D19A9264D962300C91A26 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D19A8264D962300C91A26 /* Colors.xcassets */; };
 		1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */; };
+		1C5EC883264F1EA20092A157 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EC882264F1EA20092A157 /* LogoutButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		1C4D19A5264D91E400C91A26 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1C4D19A8264D962300C91A26 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1C5EC882264F1EA20092A157 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				1C3A5C9B264DB1E300863F02 /* Main */,
 				1C4D19A4264D91BB00C91A26 /* Login */,
 				1C3A5CA1264DC7C200863F02 /* Chat */,
+				1C5EC881264F1E880092A157 /* Component */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -253,6 +256,14 @@
 				1C4D19A8264D962300C91A26 /* Colors.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C5EC881264F1E880092A157 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1C5EC882264F1EA20092A157 /* LogoutButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5EC883264F1EA20092A157 /* LogoutButton.swift in Sources */,
 				1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */,
 				1C3A5C99264DB1D100863F02 /* ChatListView.swift in Sources */,
 				1C3A5CB6264DDC9700863F02 /* BasicSocketMessage.swift in Sources */,
