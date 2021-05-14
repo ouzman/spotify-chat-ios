@@ -51,7 +51,7 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
     func processResponseURL(url: URL) {
         guard let url = URLComponents.init(url: url, resolvingAgainstBaseURL: false) else { return }
         let apiKey = url.queryItems?.first(where: { $0.name == "apikey" })?.value
-        AppState.instance.apiKey = apiKey
-        AppState.instance.activeScene = .chatList
+        MainViewState.instance.apiKey = apiKey
+        MainViewState.instance.activeScene = .chat
     }
 }

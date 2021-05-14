@@ -1,5 +1,5 @@
 //
-//  AppState.swift
+//  MainViewState.swift
 //  SpotifyChatiOS
 //
 //  Created by Oguzhan Uzman on 13.05.2021.
@@ -8,12 +8,17 @@
 import Foundation
 import Combine
 
-class AppState: ObservableObject {
+enum MainScene {
+    case login
+    case chat
+}
+
+class MainViewState: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
-    static let instance = AppState()
+    static let instance = MainViewState()
 
     private init() {}
     
     @Published var apiKey: String?
-    @Published var activeScene: ActiveScene = .login
+    @Published var activeScene: MainScene = .login
 }

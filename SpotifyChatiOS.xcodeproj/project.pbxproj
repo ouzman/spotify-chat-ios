@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C3A5C94264DAE2100863F02 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C93264DAE2100863F02 /* AppState.swift */; };
-		1C3A5C99264DB1D100863F02 /* ChatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C98264DB1D100863F02 /* ChatList.swift */; };
+		1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C93264DAE2100863F02 /* MainViewState.swift */; };
+		1C3A5C99264DB1D100863F02 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C98264DB1D100863F02 /* ChatListView.swift */; };
 		1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C9C264DB1EC00863F02 /* MainView.swift */; };
 		1C3A5C9F264DB3AB00863F02 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */; };
 		1C3A5CA3264DC7E800863F02 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA2264DC7E800863F02 /* ChatView.swift */; };
-		1C3A5CA6264DCA9A00863F02 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA5264DCA9A00863F02 /* Conversation.swift */; };
+		1C3A5CA6264DCA9A00863F02 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA5264DCA9A00863F02 /* ConversationView.swift */; };
 		1C3A5CA8264DCAA900863F02 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA7264DCAA900863F02 /* ConversationViewModel.swift */; };
-		1C3A5CAA264DCD5F00863F02 /* ActiveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA9264DCD5F00863F02 /* ActiveScene.swift */; };
+		1C3A5CAD264DCFA600863F02 /* SubmittedChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CAC264DCFA600863F02 /* SubmittedChatMessage.swift */; };
+		1C3A5CAF264DCFB800863F02 /* ReceivingChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CAE264DCFB800863F02 /* ReceivingChatMessage.swift */; };
+		1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */; };
+		1C3A5CB4264DD66100863F02 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB3264DD66100863F02 /* SocketMessage.swift */; };
+		1C3A5CB6264DDC9700863F02 /* BasicSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */; };
+		1C3A5CB8264EE5B600863F02 /* ChatViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB7264EE5B600863F02 /* ChatViewState.swift */; };
 		1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */; };
 		1C4D197D264D8D5A00C91A26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D197C264D8D5A00C91A26 /* Assets.xcassets */; };
 		1C4D1980264D8D5A00C91A26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4D197F264D8D5A00C91A26 /* Preview Assets.xcassets */; };
@@ -43,14 +48,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C3A5C93264DAE2100863F02 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		1C3A5C98264DB1D100863F02 /* ChatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatList.swift; sourceTree = "<group>"; };
+		1C3A5C93264DAE2100863F02 /* MainViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
+		1C3A5C98264DB1D100863F02 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		1C3A5C9C264DB1EC00863F02 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		1C3A5CA2264DC7E800863F02 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		1C3A5CA5264DCA9A00863F02 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		1C3A5CA5264DCA9A00863F02 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		1C3A5CA7264DCAA900863F02 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
-		1C3A5CA9264DCD5F00863F02 /* ActiveScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveScene.swift; sourceTree = "<group>"; };
+		1C3A5CAC264DCFA600863F02 /* SubmittedChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedChatMessage.swift; sourceTree = "<group>"; };
+		1C3A5CAE264DCFB800863F02 /* ReceivingChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingChatMessage.swift; sourceTree = "<group>"; };
+		1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
+		1C3A5CB3264DD66100863F02 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
+		1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSocketMessage.swift; sourceTree = "<group>"; };
+		1C3A5CB7264EE5B600863F02 /* ChatViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewState.swift; sourceTree = "<group>"; };
 		1C4D1975264D8D5600C91A26 /* SpotifyChatiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyChatiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyChatiOSApp.swift; sourceTree = "<group>"; };
 		1C4D197C264D8D5A00C91A26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */,
-				1C3A5C93264DAE2100863F02 /* AppState.swift */,
-				1C3A5CA9264DCD5F00863F02 /* ActiveScene.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -105,7 +113,7 @@
 		1C3A5C9A264DB1D500863F02 /* ChatList */ = {
 			isa = PBXGroup;
 			children = (
-				1C3A5C98264DB1D100863F02 /* ChatList.swift */,
+				1C3A5C98264DB1D100863F02 /* ChatListView.swift */,
 				1C3A5C9E264DB3AB00863F02 /* ChatListViewModel.swift */,
 			);
 			path = ChatList;
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				1C3A5C9C264DB1EC00863F02 /* MainView.swift */,
+				1C3A5C93264DAE2100863F02 /* MainViewState.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -123,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				1C3A5CA2264DC7E800863F02 /* ChatView.swift */,
+				1C3A5CB7264EE5B600863F02 /* ChatViewState.swift */,
 				1C3A5C9A264DB1D500863F02 /* ChatList */,
 				1C3A5CA4264DCA7F00863F02 /* Conversation */,
 			);
@@ -132,10 +142,29 @@
 		1C3A5CA4264DCA7F00863F02 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
-				1C3A5CA5264DCA9A00863F02 /* Conversation.swift */,
+				1C3A5CA5264DCA9A00863F02 /* ConversationView.swift */,
 				1C3A5CA7264DCAA900863F02 /* ConversationViewModel.swift */,
 			);
 			path = Conversation;
+			sourceTree = "<group>";
+		};
+		1C3A5CAB264DCF8A00863F02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A5CAC264DCFA600863F02 /* SubmittedChatMessage.swift */,
+				1C3A5CAE264DCFB800863F02 /* ReceivingChatMessage.swift */,
+				1C3A5CB3264DD66100863F02 /* SocketMessage.swift */,
+				1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C3A5CB0264DD38400863F02 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		1C4D196C264D8D5600C91A26 = {
@@ -163,6 +192,8 @@
 			children = (
 				1C3A5C92264DAE0E00863F02 /* App */,
 				1C4D19A3264D91A700C91A26 /* Scene */,
+				1C3A5CB0264DD38400863F02 /* Service */,
+				1C3A5CAB264DCF8A00863F02 /* Model */,
 				1C4D197C264D8D5A00C91A26 /* Assets.xcassets */,
 				1C4D1981264D8D5A00C91A26 /* Info.plist */,
 				1C4D19A7264D960B00C91A26 /* Supporting Files */,
@@ -354,17 +385,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3A5CAA264DCD5F00863F02 /* ActiveScene.swift in Sources */,
-				1C3A5C99264DB1D100863F02 /* ChatList.swift in Sources */,
+				1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */,
+				1C3A5C99264DB1D100863F02 /* ChatListView.swift in Sources */,
+				1C3A5CB6264DDC9700863F02 /* BasicSocketMessage.swift in Sources */,
 				1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */,
 				1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */,
-				1C3A5CA6264DCA9A00863F02 /* Conversation.swift in Sources */,
-				1C3A5C94264DAE2100863F02 /* AppState.swift in Sources */,
+				1C3A5CAF264DCFB800863F02 /* ReceivingChatMessage.swift in Sources */,
+				1C3A5CA6264DCA9A00863F02 /* ConversationView.swift in Sources */,
+				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
 				1C3A5CA8264DCAA900863F02 /* ConversationViewModel.swift in Sources */,
 				1C3A5CA3264DC7E800863F02 /* ChatView.swift in Sources */,
 				1C3A5C9F264DB3AB00863F02 /* ChatListViewModel.swift in Sources */,
 				1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */,
 				1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */,
+				1C3A5CB8264EE5B600863F02 /* ChatViewState.swift in Sources */,
+				1C3A5CAD264DCFA600863F02 /* SubmittedChatMessage.swift in Sources */,
+				1C3A5CB4264DD66100863F02 /* SocketMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

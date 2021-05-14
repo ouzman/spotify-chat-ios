@@ -12,7 +12,7 @@ struct SpotifyChatiOSApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(AppState.instance)
+                .environmentObject(MainViewState.instance)
         }
     }
 }

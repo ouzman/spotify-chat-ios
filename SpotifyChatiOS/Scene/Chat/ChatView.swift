@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct ChatView: View {
-    @EnvironmentObject var state: AppState
+    @EnvironmentObject var state: ChatViewState
     
     var body: some View {
-        VStack {
-            Text("Mobile File Sharing App")
-            NavigationLink(destination: ChatList(viewModel: ChatListViewModel()),
-                           tag: ActiveScene.chatList,
-                           selection: Binding<ActiveScene?>($state.activeScene)) {
-                EmptyView()
+        NavigationView {
+            VStack {
+                Text("Chat View")
+                NavigationLink(destination: ChatListView(viewModel: ChatListViewModel()).environmentObject(state),
+                               tag: ChatScene.chatList,
+                               selection: Binding<ChatScene?>($state.activeScene)) {
+                    EmptyView()
+                }
+                NavigationLink(destination: ConversationView(viewModel: ConversationViewModel()).environmentObject(state),
+                               tag: ChatScene.conversation,
+                               selection: Binding<ChatScene?>($state.activeScene)) {
+                    EmptyView()
+                }
             }
-            NavigationLink(destination: Conversation(viewModel: ConversationViewModel()),
-                           tag: ActiveScene.conversation,
-                           selection: Binding<ActiveScene?>($state.activeScene)) {
-                EmptyView()
-            }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
-        }
+        }       
+        .navigationBarHidden(true)
         .ignoresSafeArea()
+        .onAppear(perform: {
+            WebSocketService.instance.connect()
+        })
     }
 }
 

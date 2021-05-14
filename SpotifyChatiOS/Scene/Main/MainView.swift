@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
-    
-    @EnvironmentObject var state: AppState
+    @EnvironmentObject var state: MainViewState
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Mobile File Sharing App")
+                Text("Spotify Chat App")
                 NavigationLink(destination: LoginView(viewModel: LoginViewModel()),
-                               tag: ActiveScene.login,
-                               selection: Binding<ActiveScene?>($state.activeScene)) {
+                               tag: MainScene.login,
+                               selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()
                 }
-                NavigationLink(destination: ChatView().environmentObject(state),
-                               tag: ActiveScene.chatList,
-                               selection: Binding<ActiveScene?>($state.activeScene)) {
+                NavigationLink(destination: ChatView()
+                                .environmentObject(ChatViewState.instance),
+                               tag: MainScene.chat,
+                               selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()
                 }
             }
