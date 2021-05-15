@@ -74,7 +74,7 @@ class WebSocketService {
 
         if case .string(var text) = message {
             // TODO: remove dummy data
-            text = #"{"type": "NEW_CHAT_MESSAGE", "date": 642639226.59905899, "message": "message1", "user": "user1"}"#
+            text = #"{"type": "NEW_CHAT_MESSAGE", "date": "01-01-2021 12:16", "message": "message1", "userName": "user1", "isLoggedInUser": true}"#
             guard let data = text.data(using: .utf8),
                   let chatMessage = try? JSONDecoder().decode(BasicSocketMessage.self, from: data)
             else {

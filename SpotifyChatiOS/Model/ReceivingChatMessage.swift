@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct ReceivingChatMessage: SocketMessage, Hashable {
+struct ReceivingChatMessage: SocketMessage, Hashable, Identifiable {
+    var id: UUID?
     let type: String
-    let date: Date
+    let date: String
     let message: String
-    let user: String
+    let userName: String
+    let isLoggedInUser: Bool
 }

@@ -17,9 +17,10 @@ class ConversationViewModel: ObservableObject {
         service.registerConsumer(
             messageType: "NEW_CHAT_MESSAGE",
             consumer: { (data: Data) in
-                guard let message = try? JSONDecoder().decode(ReceivingChatMessage.self, from: data) else {
+                guard var message = try? JSONDecoder().decode(ReceivingChatMessage.self, from: data) else {
                     return
                 }
+                message.id = UUID() // TODO remove after backend integration
                 print(message)
                 self.messages.append(message)
             }
