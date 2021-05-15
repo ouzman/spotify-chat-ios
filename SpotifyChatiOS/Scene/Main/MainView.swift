@@ -19,8 +19,8 @@ struct MainView: View {
                                selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()
                 }
-                NavigationLink(destination: ChatView()
-                                .environmentObject(ChatViewState.instance),
+                NavigationLink(destination: ConversationView()
+                                .environmentObject(ConversationViewState.instance),
                                tag: MainScene.chat,
                                selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()

@@ -19,13 +19,6 @@ struct LoginView: View {
         VStack(alignment: .center, spacing: nil, content: {
             Spacer()
             self.loginButton
-                .frame(minWidth: 0,
-                       idealWidth: .infinity,
-                       maxWidth: .infinity,
-                       maxHeight: 40,
-                       alignment: .center)
-                .padding(.all)
-                .padding(.bottom, 20)
             Spacer()
         })
         .edgesIgnoringSafeArea(.all)
@@ -36,22 +29,20 @@ struct LoginView: View {
         Button(action: {
             viewModel.signIn()
         }) {
-            Image("spotify-logo")
-                .renderingMode(.template)
-                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: -40))
-                .font(.largeTitle)
-                .foregroundColor(.white)
-            Text("Login with Spotify")
-                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity,
-                       minHeight: 0, idealHeight: 100, maxHeight: .infinity,
-                       alignment: .center)
-
+            HStack {
+                Image("spotify-logo")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
+                Spacer().frame(width: 15)
+                Text("Login with Spotify")
+            }
+            .padding()
         }
+        
         .foregroundColor(.white)
         .background(Color(spotifyGreen))
         .cornerRadius(25)
         .font(.system(size: 18, weight: .semibold, design: .rounded))
-        .frame(width: 250, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 

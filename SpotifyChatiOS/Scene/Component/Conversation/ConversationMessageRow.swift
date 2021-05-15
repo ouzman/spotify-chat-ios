@@ -1,5 +1,5 @@
 //
-//  ChatMessageRow.swift
+//  ConversationMessageRow.swift
 //  SpotifyChatiOS
 //
 //  Created by Oguzhan Uzman on 15.05.2021.
@@ -7,15 +7,8 @@
 
 import SwiftUI
 
-struct ChatMessageRow: View {
-    static private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
-    let message: ReceivingChatMessage
+struct ConversationMessageRow: View {
+    let message: ConversationMessage
     
     var body: some View {
         HStack {
@@ -49,11 +42,11 @@ struct ChatMessageRow: View {
     }
 }
 
-struct ChatMessageRow_Previews: PreviewProvider {
+struct ConversationMessageRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ChatMessageRow(
-                message: ReceivingChatMessage(
+            ConversationMessageRow(
+                message: ConversationMessage(
                     type: "NEW_CHAT_MESSAGE",
                     date: "01-01-2021 12:16",
                     message: "message from user1",
@@ -63,8 +56,8 @@ struct ChatMessageRow_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .padding()
             
-            ChatMessageRow(
-                message: ReceivingChatMessage(
+            ConversationMessageRow(
+                message: ConversationMessage(
                     type: "NEW_CHAT_MESSAGE",
                     date: "01-01-2021 12:16",
                     message: "message from user2",
@@ -74,6 +67,5 @@ struct ChatMessageRow_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .padding()
         }
-        
     }
 }

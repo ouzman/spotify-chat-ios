@@ -95,7 +95,7 @@ class WebSocketService {
     }
     
     func send(text: String) {
-        let message = SubmittedChatMessage(message: text)
+        let message = NewConversationMessage(message: text)
         guard let json = try? JSONEncoder().encode(message),
               let jsonString = String(data: json, encoding: .utf8)
         else {

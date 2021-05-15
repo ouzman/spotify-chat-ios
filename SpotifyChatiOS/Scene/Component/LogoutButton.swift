@@ -31,7 +31,7 @@ class LogoutButtonViewModel {
     func logout() {
         MainViewState.instance.apiKey = nil
         MainViewState.instance.activeScene = .login
-        ChatViewState.instance.activeScene = .chatList
+        ConversationViewState.instance.activeScene = .list
     }
 }
 

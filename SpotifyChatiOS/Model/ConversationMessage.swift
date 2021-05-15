@@ -1,5 +1,5 @@
 //
-//  ReceivingChatMessage.swift
+//  ConversationMessage.swift
 //  SpotifyChatiOS
 //
 //  Created by Oguzhan Uzman on 14.05.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReceivingChatMessage: SocketMessage, Hashable, Identifiable {
+struct ConversationMessage: SocketMessage, Hashable, Identifiable {
     var id: UUID?
     let type: String
     let date: String

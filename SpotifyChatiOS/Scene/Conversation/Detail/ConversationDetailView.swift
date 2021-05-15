@@ -1,5 +1,5 @@
 //
-//  ConversationView.swift
+//  ConversationDetailView.swift
 //  SpotifyChatiOS
 //
 //  Created by Oguzhan Uzman on 13.05.2021.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ConversationView: View {
-    @ObservedObject var viewModel: ConversationViewModel
-    @EnvironmentObject var state: ChatViewState
+struct ConversationDetailView: View {
+    @ObservedObject var viewModel: ConversationDetailViewModel
+    @EnvironmentObject var state: ConversationViewState
     @State private var message = ""
     
-    init(viewModel: ConversationViewModel) {
+    init(viewModel: ConversationDetailViewModel) {
         self.viewModel = viewModel
     }
     
@@ -23,7 +23,7 @@ struct ConversationView: View {
                 ScrollViewReader { proxy in
                     LazyVStack(spacing: 8) {
                         ForEach(viewModel.messages) { message in
-                            ChatMessageRow(message: message)
+                            ConversationMessageRow(message: message)
                         }
                     }
                     .padding(10)
@@ -59,7 +59,7 @@ struct ConversationView: View {
     
     var backButton: some View {
         Button(action: {
-            state.activeScene = .chatList
+            state.activeScene = .list
         }) {
             Image(systemName: "chevron.backward")
                 .renderingMode(.template)
@@ -88,8 +88,8 @@ struct ConversationView: View {
     }
 }
 
-struct Conversation_Previews: PreviewProvider {
+struct ConversationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversationView(viewModel: ConversationViewModel())
+        ConversationDetailView(viewModel: ConversationDetailViewModel())
     }
 }
