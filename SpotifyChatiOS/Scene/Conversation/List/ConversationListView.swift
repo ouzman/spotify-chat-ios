@@ -17,21 +17,26 @@ struct ConversationListView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: nil, content: {
-            Spacer()
-            Button("chatListPage", action: {
-                state.activeScene = .detail
-            })
-            Spacer()
-        })
-        .edgesIgnoringSafeArea(.all)
+        VStack() {
+            ScrollView() {
+                LazyVStack(alignment: .leading, spacing: 25) {
+                        ForEach(viewModel.conversations) { conversation in
+                            ConversationListRow(conversation: conversation)
+                        }
+                    }
+                    .padding(10)
+            }
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing: LogoutButton())
+        .navigationTitle("Chats")
     }
 }
 
 struct ConversationListView_Previews: PreviewProvider {
     static var previews: some View {
         ConversationListView(viewModel: ConversationListViewModel())
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

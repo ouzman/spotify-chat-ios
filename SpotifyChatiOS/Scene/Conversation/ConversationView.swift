@@ -44,6 +44,6 @@ struct ConversationView: View {
 
 struct ConversationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversationView()
+        ConversationView().environmentObject(ConversationViewState.instance)
     }
 }

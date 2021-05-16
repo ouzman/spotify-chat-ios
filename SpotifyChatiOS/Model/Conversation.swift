@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Conversation: Decodable {
+struct Conversation: Decodable, Identifiable {
+    var id: UUID? //Update it
     let userImage: String
-    let conversation: ConversationMessage
+    let messages: [ConversationMessage]
 }

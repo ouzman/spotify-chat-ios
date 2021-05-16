@@ -8,7 +8,7 @@
 import Foundation
 
 struct ConversationMessage: SocketMessage, Hashable, Identifiable {
-    var id: UUID?
+    var id: UUID? //Update it
     let type: String
     let date: String
     let message: String
