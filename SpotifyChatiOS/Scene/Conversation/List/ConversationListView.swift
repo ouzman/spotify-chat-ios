@@ -32,6 +32,23 @@ struct ConversationListView: View {
                     .padding(10)
                 }
             }
+            
+            Button(action: {
+                // TODO
+            }) {
+                Image(systemName: "music.quarternote.3")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
+                    .padding()
+                
+                Text("Match")
+                    .foregroundColor(.white)
+                    .padding(.trailing, 40)
+            }
+            .background(Color.blue)
+            .cornerRadius(25)
+            .padding()
+            .font(.system(size: 18, weight: .semibold, design: .rounded))
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing: LogoutButton())

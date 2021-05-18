@@ -38,6 +38,12 @@
 		1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF96264FF127007D876C /* StringExtensions.swift */; };
 		1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */; };
 		1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BA6265341AF00445473 /* NewMessageEvent.swift */; };
+		1CC63BAA2653497A00445473 /* MatchRequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BA92653497A00445473 /* MatchRequestEvent.swift */; };
+		1CC63BAD26534AA000445473 /* SendMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BAC26534AA000445473 /* SendMessageEvent.swift */; };
+		1CC63BAF26534B5100445473 /* DismissConversationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BAE26534B5100445473 /* DismissConversationEvent.swift */; };
+		1CC63BB126534B8D00445473 /* LogoutEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB026534B8D00445473 /* LogoutEvent.swift */; };
+		1CC63BB326534C5B00445473 /* GetConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */; };
+		1CC63BB526534C9000445473 /* GetMessagesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB426534C9000445473 /* GetMessagesEvent.swift */; };
 		1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1348226504D8A0067CF34 /* ConversationListRow.swift */; };
 		1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD13484265055890067CF34 /* ConversationsEvent.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +103,12 @@
 		1C6FAF96264FF127007D876C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		1CC63BA6265341AF00445473 /* NewMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageEvent.swift; sourceTree = "<group>"; };
+		1CC63BA92653497A00445473 /* MatchRequestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRequestEvent.swift; sourceTree = "<group>"; };
+		1CC63BAC26534AA000445473 /* SendMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageEvent.swift; sourceTree = "<group>"; };
+		1CC63BAE26534B5100445473 /* DismissConversationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissConversationEvent.swift; sourceTree = "<group>"; };
+		1CC63BB026534B8D00445473 /* LogoutEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEvent.swift; sourceTree = "<group>"; };
+		1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationsEvent.swift; sourceTree = "<group>"; };
+		1CC63BB426534C9000445473 /* GetMessagesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessagesEvent.swift; sourceTree = "<group>"; };
 		1CD1348226504D8A0067CF34 /* ConversationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListRow.swift; sourceTree = "<group>"; };
 		1CD13484265055890067CF34 /* ConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,12 +149,8 @@
 		1C21B4072651D4D800639351 /* Event */ = {
 			isa = PBXGroup;
 			children = (
-				1CD13484265055890067CF34 /* ConversationsEvent.swift */,
-				1C3A5CAE264DCFB800863F02 /* ConversationMessageEvent.swift */,
-				1C21B4102651F1B400639351 /* NewConversationEvent.swift */,
-				1CC63BA6265341AF00445473 /* NewMessageEvent.swift */,
-				1C3A5CB3264DD66100863F02 /* SocketEvent.swift */,
-				1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */,
+				1CC63BA82653496100445473 /* ClientEvent */,
+				1CC63BAB26534A4F00445473 /* ServerEvent */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -331,6 +339,32 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1CC63BA82653496100445473 /* ClientEvent */ = {
+			isa = PBXGroup;
+			children = (
+				1CC63BA92653497A00445473 /* MatchRequestEvent.swift */,
+				1CC63BAC26534AA000445473 /* SendMessageEvent.swift */,
+				1CC63BAE26534B5100445473 /* DismissConversationEvent.swift */,
+				1CC63BB026534B8D00445473 /* LogoutEvent.swift */,
+				1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */,
+				1CC63BB426534C9000445473 /* GetMessagesEvent.swift */,
+			);
+			path = ClientEvent;
+			sourceTree = "<group>";
+		};
+		1CC63BAB26534A4F00445473 /* ServerEvent */ = {
+			isa = PBXGroup;
+			children = (
+				1CD13484265055890067CF34 /* ConversationsEvent.swift */,
+				1C3A5CAE264DCFB800863F02 /* ConversationMessageEvent.swift */,
+				1C21B4102651F1B400639351 /* NewConversationEvent.swift */,
+				1CC63BA6265341AF00445473 /* NewMessageEvent.swift */,
+				1C3A5CB3264DD66100863F02 /* SocketEvent.swift */,
+				1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */,
+			);
+			path = ServerEvent;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,26 +502,32 @@
 				1C3A5CB6264DDC9700863F02 /* BasicSocketMessage.swift in Sources */,
 				1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */,
 				1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */,
+				1CC63BB526534C9000445473 /* GetMessagesEvent.swift in Sources */,
 				1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */,
+				1CC63BB126534B8D00445473 /* LogoutEvent.swift in Sources */,
 				1C3A5CAF264DCFB800863F02 /* ConversationMessageEvent.swift in Sources */,
 				1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */,
 				1C3A5CA6264DCA9A00863F02 /* ConversationDetailView.swift in Sources */,
 				1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */,
 				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
 				1C3A5CA8264DCAA900863F02 /* ConversationDetailViewModel.swift in Sources */,
+				1CC63BAF26534B5100445473 /* DismissConversationEvent.swift in Sources */,
 				1C3A5CA3264DC7E800863F02 /* ConversationView.swift in Sources */,
 				1C3A5C9F264DB3AB00863F02 /* ConversationListViewModel.swift in Sources */,
 				1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */,
 				1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */,
 				1C21B4112651F1B400639351 /* NewConversationEvent.swift in Sources */,
 				1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */,
+				1CC63BB326534C5B00445473 /* GetConversationsEvent.swift in Sources */,
 				1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */,
 				1C3A5CB8264EE5B600863F02 /* ConversationViewState.swift in Sources */,
 				1C21B40F2651EEDE00639351 /* ConversationMessageDataService.swift in Sources */,
+				1CC63BAA2653497A00445473 /* MatchRequestEvent.swift in Sources */,
 				1C3A5CAD264DCFA600863F02 /* NewConversationMessage.swift in Sources */,
 				1C21B4062651D11000639351 /* RemoteImage.swift in Sources */,
 				1C3A5CB4264DD66100863F02 /* SocketEvent.swift in Sources */,
 				1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */,
+				1CC63BAD26534AA000445473 /* SendMessageEvent.swift in Sources */,
 				1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
