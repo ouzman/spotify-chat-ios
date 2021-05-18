@@ -11,7 +11,7 @@ import Combine
 struct ConversationListView: View {
     @ObservedObject var viewModel: ConversationListViewModel
     @EnvironmentObject var state: ConversationViewState
-
+    
     init(viewModel: ConversationListViewModel) {
         self.viewModel = viewModel
     }
@@ -20,11 +20,17 @@ struct ConversationListView: View {
         VStack() {
             ScrollView() {
                 LazyVStack(alignment: .leading, spacing: 25) {
-                        ForEach(viewModel.conversations) { conversation in
+                    ForEach(viewModel.conversations, id: \.id) { conversation in
+                        
+                        Button(action: {
+                            state.activeConversation = conversation
+                            state.activeScene = .detail
+                        }) {
                             ConversationListRow(conversation: conversation)
                         }
                     }
                     .padding(10)
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

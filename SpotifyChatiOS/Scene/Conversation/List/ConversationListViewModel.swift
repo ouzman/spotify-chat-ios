@@ -5,25 +5,22 @@
 //  Created by Oguzhan Uzman on 13.05.2021.
 //
 
-import Foundation
+import Combine
 
 class ConversationListViewModel: ObservableObject {
-    @Published private(set) var conversations: [Conversation] = [
-        Conversation(id: UUID(),
-                     userImage: "",
-                     messages: [ConversationMessage(id: UUID(),
-                                                       type: "",
-                                                       date: "01-01-2021 12:16",
-                                                       message: "message content",
-                                                       userName: "John Doe",
-                                                       isLoggedInUser: true)]),
-        Conversation(id: UUID(),
-                     userImage: "",
-                     messages: [ConversationMessage(id: UUID(),
-                                                       type: "",
-                                                       date: "02-01-2021 12:16",
-                                                       message: "Message dummy",
-                                                       userName: "Jane Doe",
-                                                       isLoggedInUser: true)])
-    ]
+    private let conversationDataService = ConversationDataService.instance
+    private var cancellables = Set<AnyCancellable>()
+    
+    @Published var conversations = [Conversation]()
+    
+    init() {
+        conversationDataService.$conversations
+            .sink { conversationDict in
+                return self.conversations = conversationDict.values
+                    .sorted { c1, c2 in
+                        c1.lastMessage.date > c2.lastMessage.date
+                    }
+            }
+            .store(in: &cancellables)
+    }
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1C21B4062651D11000639351 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4052651D11000639351 /* RemoteImage.swift */; };
+		1C21B4092651D57F00639351 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4082651D57F00639351 /* Conversation.swift */; };
+		1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B40C2651EEC700639351 /* ConversationDataService.swift */; };
+		1C21B40F2651EEDE00639351 /* ConversationMessageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B40E2651EEDE00639351 /* ConversationMessageDataService.swift */; };
+		1C21B4112651F1B400639351 /* NewConversationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4102651F1B400639351 /* NewConversationEvent.swift */; };
 		1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C93264DAE2100863F02 /* MainViewState.swift */; };
 		1C3A5C99264DB1D100863F02 /* ConversationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C98264DB1D100863F02 /* ConversationListView.swift */; };
 		1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5C9C264DB1EC00863F02 /* MainView.swift */; };
@@ -16,9 +20,9 @@
 		1C3A5CA6264DCA9A00863F02 /* ConversationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA5264DCA9A00863F02 /* ConversationDetailView.swift */; };
 		1C3A5CA8264DCAA900863F02 /* ConversationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CA7264DCAA900863F02 /* ConversationDetailViewModel.swift */; };
 		1C3A5CAD264DCFA600863F02 /* NewConversationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CAC264DCFA600863F02 /* NewConversationMessage.swift */; };
-		1C3A5CAF264DCFB800863F02 /* ConversationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CAE264DCFB800863F02 /* ConversationMessage.swift */; };
+		1C3A5CAF264DCFB800863F02 /* ConversationMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CAE264DCFB800863F02 /* ConversationMessageEvent.swift */; };
 		1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */; };
-		1C3A5CB4264DD66100863F02 /* SocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB3264DD66100863F02 /* SocketMessage.swift */; };
+		1C3A5CB4264DD66100863F02 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB3264DD66100863F02 /* SocketEvent.swift */; };
 		1C3A5CB6264DDC9700863F02 /* BasicSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */; };
 		1C3A5CB8264EE5B600863F02 /* ConversationViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A5CB7264EE5B600863F02 /* ConversationViewState.swift */; };
 		1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */; };
@@ -33,8 +37,9 @@
 		1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */; };
 		1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF96264FF127007D876C /* StringExtensions.swift */; };
 		1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */; };
+		1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BA6265341AF00445473 /* NewMessageEvent.swift */; };
 		1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1348226504D8A0067CF34 /* ConversationListRow.swift */; };
-		1CD13485265055890067CF34 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD13484265055890067CF34 /* Conversation.swift */; };
+		1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD13484265055890067CF34 /* ConversationsEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,10 @@
 
 /* Begin PBXFileReference section */
 		1C21B4052651D11000639351 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		1C21B4082651D57F00639351 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		1C21B40C2651EEC700639351 /* ConversationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataService.swift; sourceTree = "<group>"; };
+		1C21B40E2651EEDE00639351 /* ConversationMessageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageDataService.swift; sourceTree = "<group>"; };
+		1C21B4102651F1B400639351 /* NewConversationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationEvent.swift; sourceTree = "<group>"; };
 		1C3A5C93264DAE2100863F02 /* MainViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
 		1C3A5C98264DB1D100863F02 /* ConversationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListView.swift; sourceTree = "<group>"; };
 		1C3A5C9C264DB1EC00863F02 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -64,9 +73,9 @@
 		1C3A5CA5264DCA9A00863F02 /* ConversationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDetailView.swift; sourceTree = "<group>"; };
 		1C3A5CA7264DCAA900863F02 /* ConversationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDetailViewModel.swift; sourceTree = "<group>"; };
 		1C3A5CAC264DCFA600863F02 /* NewConversationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationMessage.swift; sourceTree = "<group>"; };
-		1C3A5CAE264DCFB800863F02 /* ConversationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessage.swift; sourceTree = "<group>"; };
+		1C3A5CAE264DCFB800863F02 /* ConversationMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageEvent.swift; sourceTree = "<group>"; };
 		1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
-		1C3A5CB3264DD66100863F02 /* SocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketMessage.swift; sourceTree = "<group>"; };
+		1C3A5CB3264DD66100863F02 /* SocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
 		1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSocketMessage.swift; sourceTree = "<group>"; };
 		1C3A5CB7264EE5B600863F02 /* ConversationViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewState.swift; sourceTree = "<group>"; };
 		1C4D1975264D8D5600C91A26 /* SpotifyChatiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyChatiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,8 +96,9 @@
 		1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageRow.swift; sourceTree = "<group>"; };
 		1C6FAF96264FF127007D876C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		1CC63BA6265341AF00445473 /* NewMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageEvent.swift; sourceTree = "<group>"; };
 		1CD1348226504D8A0067CF34 /* ConversationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListRow.swift; sourceTree = "<group>"; };
-		1CD13484265055890067CF34 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		1CD13484265055890067CF34 /* ConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,19 @@
 				1C21B4052651D11000639351 /* RemoteImage.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		1C21B4072651D4D800639351 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				1CD13484265055890067CF34 /* ConversationsEvent.swift */,
+				1C3A5CAE264DCFB800863F02 /* ConversationMessageEvent.swift */,
+				1C21B4102651F1B400639351 /* NewConversationEvent.swift */,
+				1CC63BA6265341AF00445473 /* NewMessageEvent.swift */,
+				1C3A5CB3264DD66100863F02 /* SocketEvent.swift */,
+				1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		1C3A5C92264DAE0E00863F02 /* App */ = {
@@ -173,11 +196,8 @@
 		1C3A5CAB264DCF8A00863F02 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1CD13484265055890067CF34 /* Conversation.swift */,
-				1C3A5CAE264DCFB800863F02 /* ConversationMessage.swift */,
 				1C3A5CAC264DCFA600863F02 /* NewConversationMessage.swift */,
-				1C3A5CB3264DD66100863F02 /* SocketMessage.swift */,
-				1C3A5CB5264DDC9700863F02 /* BasicSocketMessage.swift */,
+				1C21B4082651D57F00639351 /* Conversation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */,
+				1C21B4072651D4D800639351 /* Event */,
+				1C21B40C2651EEC700639351 /* ConversationDataService.swift */,
+				1C21B40E2651EEDE00639351 /* ConversationMessageDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -438,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C21B4092651D57F00639351 /* Conversation.swift in Sources */,
 				1C5EC883264F1EA20092A157 /* LogoutButton.swift in Sources */,
 				1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */,
 				1C3A5C99264DB1D100863F02 /* ConversationListView.swift in Sources */,
@@ -445,7 +469,8 @@
 				1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */,
 				1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */,
 				1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */,
-				1C3A5CAF264DCFB800863F02 /* ConversationMessage.swift in Sources */,
+				1C3A5CAF264DCFB800863F02 /* ConversationMessageEvent.swift in Sources */,
+				1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */,
 				1C3A5CA6264DCA9A00863F02 /* ConversationDetailView.swift in Sources */,
 				1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */,
 				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
@@ -454,13 +479,16 @@
 				1C3A5C9F264DB3AB00863F02 /* ConversationListViewModel.swift in Sources */,
 				1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */,
 				1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */,
-				1CD13485265055890067CF34 /* Conversation.swift in Sources */,
+				1C21B4112651F1B400639351 /* NewConversationEvent.swift in Sources */,
+				1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */,
 				1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */,
 				1C3A5CB8264EE5B600863F02 /* ConversationViewState.swift in Sources */,
+				1C21B40F2651EEDE00639351 /* ConversationMessageDataService.swift in Sources */,
 				1C3A5CAD264DCFA600863F02 /* NewConversationMessage.swift in Sources */,
 				1C21B4062651D11000639351 /* RemoteImage.swift in Sources */,
-				1C3A5CB4264DD66100863F02 /* SocketMessage.swift in Sources */,
+				1C3A5CB4264DD66100863F02 /* SocketEvent.swift in Sources */,
 				1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */,
+				1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,23 +11,41 @@ import SwiftUI
 
 class ConversationDetailViewModel: ObservableObject {
     private let service: WebSocketService = WebSocketService.instance
-    @Published private(set) var messages: [ConversationMessage] = []
+    private let conversationMessageDataService: ConversationMessageDataService = ConversationMessageDataService.instance
+    private var cancellables = Set<AnyCancellable>()
+    
+    var conversation: Conversation?
+    
+    @Published var messages = [Conversation.Message]()
     
     init() {
-        service.registerConsumer(
-            messageType: "NEW_CHAT_MESSAGE",
-            consumer: { (data: Data) in
-                guard var message = try? JSONDecoder().decode(ConversationMessage.self, from: data) else {
-                    return
+        conversationMessageDataService.$conversationMessages
+            .map { [weak self] conversationMessages in
+                guard let self = self else {
+                    return []
                 }
-                message.id = UUID() // TODO remove after backend integration
-                print(message)
-                self.messages.append(message)
+                return Self.getMessagesOfConversation(conversationId: self.conversation?.id , messages: conversationMessages)
             }
-        )
+            .sink { messages in
+                self.messages = messages
+            }
+            .store(in: &cancellables)
     }
     
-    func send(text: String) {
-        service.send(text: text)
+    func onAppear() {
+        self.messages = Self.getMessagesOfConversation(conversationId: self.conversation?.id,
+                                                       messages: conversationMessageDataService.conversationMessages)
+    }
+    
+    static func getMessagesOfConversation(conversationId: String?, messages: [String: [String: Conversation.Message]]) -> [Conversation.Message] {
+        if let conversationId = conversationId,
+            let messages = messages[conversationId] {
+            return messages.values
+                .sorted(by: { m1, m2 in
+                    m1.date > m2.date
+                })
+        }
+        
+        return []
     }
 }

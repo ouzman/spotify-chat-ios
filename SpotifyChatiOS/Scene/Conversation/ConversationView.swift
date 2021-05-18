@@ -17,8 +17,7 @@ struct ConversationView: View {
                 NavigationLink(
                     destination: ConversationListView(
                         viewModel: ConversationListViewModel()
-                    )
-                    .environmentObject(state),
+                    ),
                     tag: ConversationScene.list,
                     selection: Binding<ConversationScene?>($state.activeScene)) {
                     EmptyView()
@@ -26,8 +25,7 @@ struct ConversationView: View {
                 NavigationLink(
                     destination: ConversationDetailView(
                         viewModel: ConversationDetailViewModel()
-                    )
-                    .environmentObject(state),
+                    ),
                     tag: ConversationScene.detail,
                     selection: Binding<ConversationScene?>($state.activeScene)) {
                     EmptyView()

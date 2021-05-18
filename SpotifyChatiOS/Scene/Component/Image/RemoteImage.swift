@@ -18,7 +18,8 @@ struct RemoteImage: View {
         
         init(url: String) {
             guard let parsedURL = URL(string: url) else {
-                fatalError("Invalid URL: \(url)")
+                self.state = .failure
+                return
             }
             
             URLSession.shared.dataTask(with: parsedURL) { data, response, error in
@@ -46,10 +47,10 @@ struct RemoteImage: View {
             .aspectRatio(contentMode: .fit)
     }
     
-    init(url: String,
+    init(url: String?,
          loading: Image = Image(systemName: "photo"),
          failure: Image = Image(systemName: "multiply.circle")) {
-        _loader = StateObject(wrappedValue: Loader(url: url))
+        _loader = StateObject(wrappedValue: Loader(url: url ?? ""))
         self.loading = loading
         self.failure = failure
     }

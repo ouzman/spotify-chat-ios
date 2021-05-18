@@ -10,7 +10,7 @@ import Combine
 
 struct ConsumerDefinition {
     let type: String
-    let consumer: (Data) -> Void
+    let consume: (Data) -> Void
 }
 
 class WebSocketService {
@@ -19,13 +19,35 @@ class WebSocketService {
     private var cancellables = Set<AnyCancellable>()
     private var consumers = [String: ConsumerDefinition]()
     
-    private init() { }
+    private init() {
+        //TODO: remove it
+        let timer1 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(oneTime), userInfo: nil, repeats: true)
+//        let timer2 = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(always), userInfo: nil, repeats: true)
+
+    }
+
+    
+    @objc func oneTime() {
+        let event = "{\"eventId\":\"UkAJsxQeR0ulVd1Vn81yiw\",\"date\":\"2021-05-16T14:28:06.001Z\",\"action\":\"NewConversation\",\"data\":{\"conversation\":{\"id\":\"\(Int.random(in: 1...100))\",\"lastMessage\":{\"id\":\"CxBZSRw/QISi4xHC2SQ9mg\",\"actorId\":\"n0p40O9FSWqxTwn4Nf+D+Q\",\"content\":\"message content\",\"date\":\"2021-05-16T14:28:06.002Z\"},\"song\":{\"name\":\"Master Of Life\",\"artist\":\"Khruangbin\",\"image\":\"https://i.scdn.co/image/ab67616d0000b273da5658301db50de20d4d6106\"},\"users\":[{\"id\":\"qbe6jIfSSiSkwQhrNXYuLg\",\"name\":\"John Doe\",\"profilePhotoUrl\":null},{\"id\":\"pyB2se26SfCw/07gfmt0MA\",\"name\":\"Jane Doe\",\"profilePhotoUrl\":\"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10202819517622673&height=300&width=300&ext=1623763736&hash=AeS2I6q5AzzGf92gzBs\"}]}}}"
+
+        consumers["NewConversation"]?.consume(event.data(using: .utf8)!)
+    }
+    
+    @objc func always() {
+        let i = Int(Date().timeIntervalSince1970)
+        let actorId = Bool.random() ? "qbe6jIfSSiSkwQhrNXYuLg" : "pyB2se26SfCw/07gfmt0MA"
+
+        let event = "{\"eventId\":\"CwOGx6cMSMybK/+r0fTAXg\",\"date\":\"2021-05-16T14:28:06.002Z\",\"action\":\"NewMessage\",\"data\":{\"conversationId\":\"babus\",\"message\":{\"id\":\"\(i))\",\"actorId\":\"\(actorId)\",\"content\":\"message content\",\"date\":\"\(i)\"}}}"
+        
+        consumers["NewMessage"]?.consume(event.data(using: .utf8)!)
+    }
+    
 
     func registerConsumer(messageType: String,
                           consumer: @escaping (Data) -> Void) {
         let definition = ConsumerDefinition(
             type: messageType,
-            consumer: consumer)
+            consume: consumer)
         
         consumers[messageType] = definition
     }
@@ -42,7 +64,7 @@ class WebSocketService {
         webSocketTask = session.webSocketTask(with: url)
         
         webSocketTask?.receive(completionHandler: onReceive)
-        webSocketTask?.resume()
+//        webSocketTask?.resume()
     }
     
     func disconnect() {
@@ -56,7 +78,7 @@ class WebSocketService {
     
     private func onReceive(incoming: Result<URLSessionWebSocketTask.Message, Error>) {
         webSocketTask?.receive(completionHandler: onReceive)
-
+        
         incoming
             .publisher
             .receive(on: RunLoop.main)
@@ -71,23 +93,23 @@ class WebSocketService {
     }
     
     private func onMessage(message: URLSessionWebSocketTask.Message) {
-
+        
         if case .string(var text) = message {
             // TODO: remove dummy data
             text = #"{"type": "NEW_CHAT_MESSAGE", "date": "01-01-2021 12:16", "message": "message1", "userName": "user1", "isLoggedInUser": true}"#
             guard let data = text.data(using: .utf8),
-                  let chatMessage = try? JSONDecoder().decode(BasicSocketMessage.self, from: data)
+                  let chatMessage = try? JSONDecoder().decode(BasicSocketEvent.self, from: data)
             else {
                 print("Invalid message schema recieved \(text)")
                 return
             }
             
-            guard let consumerDefinition = self.consumers[chatMessage.type] else {
-                print("Unknown message type \(chatMessage.type)")
+            guard let consumerDefinition = self.consumers[chatMessage.action] else {
+                print("Unknown message type \(chatMessage.action)")
                 return
             }
             
-            consumerDefinition.consumer(data)
+            consumerDefinition.consume(data)
             
         } else {
             print("Unknown socket message \(message)")
@@ -101,7 +123,7 @@ class WebSocketService {
         else {
             return
         }
-    
+        
         webSocketTask?.send(.string(jsonString)) { error in
             if let error = error {
                 print("Error sending message", error)

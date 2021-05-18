@@ -20,5 +20,6 @@ class MainViewState: ObservableObject {
     private init() {}
     
     @Published var apiKey: String?
+    @Published var userId: String?
     @Published var activeScene: MainScene = .login
 }

@@ -14,6 +14,7 @@ struct ConversationDetailView: View {
     
     init(viewModel: ConversationDetailViewModel) {
         self.viewModel = viewModel
+        self.viewModel.conversation = ConversationViewState.instance.activeConversation
     }
     
     var body: some View {
@@ -22,8 +23,8 @@ struct ConversationDetailView: View {
             ScrollView {
                 ScrollViewReader { proxy in
                     LazyVStack(spacing: 8) {
-                        ForEach(viewModel.messages) { message in
-                            ConversationMessageRow(message: message)
+                        ForEach(viewModel.messages, id: \.id) { message in
+                            ConversationMessageRow(users: viewModel.conversation!.users, message: message)
                         }
                     }
                     .padding(10)
@@ -55,6 +56,9 @@ struct ConversationDetailView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton,
                             trailing: LogoutButton())
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
     
     var backButton: some View {
@@ -78,7 +82,7 @@ struct ConversationDetailView: View {
     
     private func onCommit() {
         if !message.isEmpty {
-            viewModel.send(text: message)
+            // viewModel.send(text: message)
             message = ""
         }
     }
@@ -91,5 +95,7 @@ struct ConversationDetailView: View {
 struct ConversationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ConversationDetailView(viewModel: ConversationDetailViewModel())
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }
