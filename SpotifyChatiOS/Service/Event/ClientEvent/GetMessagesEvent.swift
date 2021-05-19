@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct GetMessagesEvent {
+struct GetMessagesEvent: ClientEvent {
     let action: String // GetMessages
     let data: GetMessagesEventData
     
-    struct GetMessagesEventData {
+    struct GetMessagesEventData: Encodable {
         let conversation: String
     }
 }

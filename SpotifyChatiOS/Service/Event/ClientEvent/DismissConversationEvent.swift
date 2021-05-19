@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct DismissConversationEvent {
+struct DismissConversationEvent: ClientEvent {
     let action: String // DismissConversation
     let data: DismissConversationEventData
     
-    struct DismissConversationEventData {
+    struct DismissConversationEventData: Encodable {
         let conversation: String
     }
 }

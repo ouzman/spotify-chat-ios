@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct GetConversationsEvent {
+struct GetConversationsEvent: ClientEvent {
     let action: String // GetConversations
     let data: GetConversationsEventData
     
-    struct GetConversationsEventData {}
+    struct GetConversationsEventData: Encodable {}
 }

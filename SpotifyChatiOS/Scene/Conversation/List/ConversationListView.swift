@@ -34,7 +34,7 @@ struct ConversationListView: View {
             }
             
             Button(action: {
-                // TODO
+                viewModel.matchRequest()
             }) {
                 Image(systemName: "music.quarternote.3")
                     .renderingMode(.template)

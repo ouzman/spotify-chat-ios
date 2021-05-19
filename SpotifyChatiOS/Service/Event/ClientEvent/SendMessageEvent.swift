@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct SendMessageEvent {
+struct SendMessageEvent: ClientEvent {
     let action: String // SendMessage
     let data: SendMessageEventData
     
-    struct SendMessageEventData {
+    struct SendMessageEventData: Encodable {
         let conversation: String
         let message: Message
     }
     
-    struct Message {
+    struct Message: Encodable {
         let id: String
         let content: String
     }

@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct LogoutEvent {
+struct LogoutEvent: ClientEvent {
     let action: String // Logout
     let data: LogoutEventData
     
-    struct LogoutEventData {}
+    struct LogoutEventData: Encodable {}
 }

@@ -44,6 +44,7 @@
 		1CC63BB126534B8D00445473 /* LogoutEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB026534B8D00445473 /* LogoutEvent.swift */; };
 		1CC63BB326534C5B00445473 /* GetConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */; };
 		1CC63BB526534C9000445473 /* GetMessagesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB426534C9000445473 /* GetMessagesEvent.swift */; };
+		1CC63BB72653517B00445473 /* ClientEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB62653517B00445473 /* ClientEvent.swift */; };
 		1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1348226504D8A0067CF34 /* ConversationListRow.swift */; };
 		1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD13484265055890067CF34 /* ConversationsEvent.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		1CC63BB026534B8D00445473 /* LogoutEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEvent.swift; sourceTree = "<group>"; };
 		1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConversationsEvent.swift; sourceTree = "<group>"; };
 		1CC63BB426534C9000445473 /* GetMessagesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessagesEvent.swift; sourceTree = "<group>"; };
+		1CC63BB62653517B00445473 /* ClientEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEvent.swift; sourceTree = "<group>"; };
 		1CD1348226504D8A0067CF34 /* ConversationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListRow.swift; sourceTree = "<group>"; };
 		1CD13484265055890067CF34 /* ConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,6 +350,7 @@
 				1CC63BB026534B8D00445473 /* LogoutEvent.swift */,
 				1CC63BB226534C5B00445473 /* GetConversationsEvent.swift */,
 				1CC63BB426534C9000445473 /* GetMessagesEvent.swift */,
+				1CC63BB62653517B00445473 /* ClientEvent.swift */,
 			);
 			path = ClientEvent;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				1C3A5C9D264DB1EC00863F02 /* MainView.swift in Sources */,
 				1C4D19A6264D91E400C91A26 /* LoginView.swift in Sources */,
 				1CC63BB526534C9000445473 /* GetMessagesEvent.swift in Sources */,
+				1CC63BB72653517B00445473 /* ClientEvent.swift in Sources */,
 				1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */,
 				1CC63BB126534B8D00445473 /* LogoutEvent.swift in Sources */,
 				1C3A5CAF264DCFB800863F02 /* ConversationMessageEvent.swift in Sources */,

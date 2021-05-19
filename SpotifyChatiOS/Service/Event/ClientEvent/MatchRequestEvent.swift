@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct MatchRequestEvent {
-    let action: String // MatchRequest
+struct MatchRequestEvent: ClientEvent {
+    let action: String
     let data: MatchRequestEventData
     
-    struct MatchRequestEventData {}
+    struct MatchRequestEventData: Encodable {}
 }
