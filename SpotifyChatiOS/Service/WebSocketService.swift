@@ -62,7 +62,7 @@ class WebSocketService {
         guard webSocketTask == nil else { return }
         
         guard let apiKey = MainViewState.instance.apiKey else { return }
-        let url = URL(string: "wss://my5m5otnpl.execute-api.eu-west-1.amazonaws.com/$default")!
+        let url = URL(string: "wss://4z0uce6q75.execute-api.eu-west-1.amazonaws.com/prod")!
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = ["X-SC-ApiKey": apiKey]
         let session = URLSession(configuration: configuration)
