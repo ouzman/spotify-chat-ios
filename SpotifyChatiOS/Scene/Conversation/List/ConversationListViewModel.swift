@@ -14,7 +14,8 @@ class ConversationListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     @Published var conversations = [Conversation]()
-    
+    @Published var loading = false
+
     init() {
         conversationDataService.$conversations
             .sink { conversationDict in
@@ -28,11 +29,12 @@ class ConversationListViewModel: ObservableObject {
         
         service.registerConsumer(
             messageType: "NewConversation",
-            consumer: { (data: Data) in
+            consumer: { [weak self] (data: Data) in
                 guard let event = try? JSONDecoder().decode(NewConversationEvent.self, from: data) else {
                     return
                 }
                 
+                self?.loading = false
                 ConversationViewState.instance.activeConversation = event.data.conversation
                 ConversationViewState.instance.activeScene = .detail
             }

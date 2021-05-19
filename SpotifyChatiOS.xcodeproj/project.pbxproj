@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C00C3772655660E002FDC0D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3762655660E002FDC0D /* ViewExtensions.swift */; };
 		1C21B4062651D11000639351 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4052651D11000639351 /* RemoteImage.swift */; };
 		1C21B4092651D57F00639351 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4082651D57F00639351 /* Conversation.swift */; };
 		1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B40C2651EEC700639351 /* ConversationDataService.swift */; };
@@ -37,6 +38,8 @@
 		1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */; };
 		1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF96264FF127007D876C /* StringExtensions.swift */; };
 		1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */; };
+		1CA6649B2655513000418048 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6649A2655513000418048 /* LoadingView.swift */; };
+		1CA6649D26555ECA00418048 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6649C26555ECA00418048 /* ActivityIndicator.swift */; };
 		1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BA6265341AF00445473 /* NewMessageEvent.swift */; };
 		1CC63BAA2653497A00445473 /* MatchRequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BA92653497A00445473 /* MatchRequestEvent.swift */; };
 		1CC63BAD26534AA000445473 /* SendMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BAC26534AA000445473 /* SendMessageEvent.swift */; };
@@ -67,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C00C3762655660E002FDC0D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1C21B4052651D11000639351 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1C21B4082651D57F00639351 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		1C21B40C2651EEC700639351 /* ConversationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataService.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageRow.swift; sourceTree = "<group>"; };
 		1C6FAF96264FF127007D876C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		1CA6649A2655513000418048 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1CA6649C26555ECA00418048 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1CC63BA6265341AF00445473 /* NewMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageEvent.swift; sourceTree = "<group>"; };
 		1CC63BA92653497A00445473 /* MatchRequestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRequestEvent.swift; sourceTree = "<group>"; };
 		1CC63BAC26534AA000445473 /* SendMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageEvent.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 		1C5EC881264F1E880092A157 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1C8C1ADF2655230800BC1F08 /* LoadingView */,
 				1C21B4042651D10400639351 /* Image */,
 				1C5EC885264F2C740092A157 /* Conversation */,
 				1C5EC882264F1EA20092A157 /* LogoutButton.swift */,
@@ -337,8 +344,18 @@
 			children = (
 				1C6FAF96264FF127007D876C /* StringExtensions.swift */,
 				1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */,
+				1C00C3762655660E002FDC0D /* ViewExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		1C8C1ADF2655230800BC1F08 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				1CA6649A2655513000418048 /* LoadingView.swift */,
+				1CA6649C26555ECA00418048 /* ActivityIndicator.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		1CC63BA82653496100445473 /* ClientEvent */ = {
@@ -384,6 +401,8 @@
 			dependencies = (
 			);
 			name = SpotifyChatiOS;
+			packageProductDependencies = (
+			);
 			productName = SpotifyChatiOS;
 			productReference = 1C4D1975264D8D5600C91A26 /* SpotifyChatiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -455,6 +474,8 @@
 				Base,
 			);
 			mainGroup = 1C4D196C264D8D5600C91A26;
+			packageReferences = (
+			);
 			productRefGroup = 1C4D1976264D8D5600C91A26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -498,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA6649D26555ECA00418048 /* ActivityIndicator.swift in Sources */,
 				1C21B4092651D57F00639351 /* Conversation.swift in Sources */,
 				1C5EC883264F1EA20092A157 /* LogoutButton.swift in Sources */,
 				1C3A5CB2264DD3B100863F02 /* WebSocketService.swift in Sources */,
@@ -512,6 +534,7 @@
 				1C3A5CAF264DCFB800863F02 /* ConversationMessageEvent.swift in Sources */,
 				1CC63BA7265341AF00445473 /* NewMessageEvent.swift in Sources */,
 				1C3A5CA6264DCA9A00863F02 /* ConversationDetailView.swift in Sources */,
+				1CA6649B2655513000418048 /* LoadingView.swift in Sources */,
 				1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */,
 				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
 				1C3A5CA8264DCAA900863F02 /* ConversationDetailViewModel.swift in Sources */,
@@ -526,6 +549,7 @@
 				1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */,
 				1C3A5CB8264EE5B600863F02 /* ConversationViewState.swift in Sources */,
 				1C21B40F2651EEDE00639351 /* ConversationMessageDataService.swift in Sources */,
+				1C00C3772655660E002FDC0D /* ViewExtensions.swift in Sources */,
 				1CC63BAA2653497A00445473 /* MatchRequestEvent.swift in Sources */,
 				1C3A5CAD264DCFA600863F02 /* NewConversationMessage.swift in Sources */,
 				1C21B4062651D11000639351 /* RemoteImage.swift in Sources */,
