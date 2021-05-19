@@ -21,7 +21,8 @@ struct ConversationView: View {
                     tag: ConversationScene.list,
                     selection: Binding<ConversationScene?>($state.activeScene)) {
                     EmptyView()
-                }
+                }.hidden()
+                
                 NavigationLink(
                     destination: ConversationDetailView(
                         viewModel: ConversationDetailViewModel()
@@ -29,7 +30,7 @@ struct ConversationView: View {
                     tag: ConversationScene.detail,
                     selection: Binding<ConversationScene?>($state.activeScene)) {
                     EmptyView()
-                }
+                }.hidden()
             }
         }       
         .navigationBarHidden(true)

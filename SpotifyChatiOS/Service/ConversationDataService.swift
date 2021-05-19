@@ -31,10 +31,12 @@ class ConversationDataService: ObservableObject {
         webSocketService.registerConsumer(
             messageType: "NewConversation",
             consumer: { (data: Data) in
-                guard let event = try? JSONDecoder().decode(NewConversationEvent.self, from: data) else {
-                    return
+                do {
+                    let event = try JSONDecoder().decode(NewConversationEvent.self, from: data)
+                    self.addNewConversations(conversations: [event.data.conversation])
+                } catch(let error) {
+                    print(error)
                 }
-                self.addNewConversations(conversations: [event.data.conversation])
             }
         )
     }

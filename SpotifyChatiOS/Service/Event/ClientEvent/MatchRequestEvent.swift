@@ -9,6 +9,7 @@ import Foundation
 
 struct MatchRequestEvent: ClientEvent {
     let action: String
+    let service = "Match"
     let data: MatchRequestEventData
     
     struct MatchRequestEventData: Encodable {}

@@ -21,7 +21,7 @@ class ConversationListViewModel: ObservableObject {
             .sink { conversationDict in
                 return self.conversations = conversationDict.values
                     .sorted { c1, c2 in
-                        c1.lastMessage.date > c2.lastMessage.date
+                        c1.date > c2.date
                     }
             }
             .store(in: &cancellables)

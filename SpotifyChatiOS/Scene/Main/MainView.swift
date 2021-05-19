@@ -18,13 +18,14 @@ struct MainView: View {
                                tag: MainScene.login,
                                selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()
-                }
+                }.hidden()
+                
                 NavigationLink(destination: ConversationView()
                                 .environmentObject(ConversationViewState.instance),
                                tag: MainScene.chat,
                                selection: Binding<MainScene?>($state.activeScene)) {
                     EmptyView()
-                }
+                }.hidden()
             }
             .navigationBarHidden(true)
         }

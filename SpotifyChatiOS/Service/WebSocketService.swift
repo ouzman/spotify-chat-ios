@@ -21,9 +21,9 @@ class WebSocketService {
     
     private init() {
         //TODO: remove it
-        let timer1 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
-        let timer3 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
-        let timer4 = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
+//        let timer1 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
+//        let timer3 = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
+//        let timer4 = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(oneTime), userInfo: nil, repeats: false)
 //        let timer2 = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(always), userInfo: nil, repeats: true)
     }
 
@@ -62,14 +62,14 @@ class WebSocketService {
         guard webSocketTask == nil else { return }
         
         guard let apiKey = MainViewState.instance.apiKey else { return }
-        let url = URL(string: "wss://4z0uce6q75.execute-api.eu-west-1.amazonaws.com/prod")!
+        let url = URL(string: "wss://s7rwqp3id5.execute-api.eu-west-1.amazonaws.com/prod")!
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = ["X-SC-ApiKey": apiKey]
         let session = URLSession(configuration: configuration)
         webSocketTask = session.webSocketTask(with: url)
         
         webSocketTask?.receive(completionHandler: onReceive)
-//        webSocketTask?.resume()
+        webSocketTask?.resume()
     }
     
     func disconnect() {
@@ -99,9 +99,7 @@ class WebSocketService {
     
     private func onMessage(message: URLSessionWebSocketTask.Message) {
         
-        if case .string(var text) = message {
-            // TODO: remove dummy data
-            text = #"{"type": "NEW_CHAT_MESSAGE", "date": "01-01-2021 12:16", "message": "message1", "userName": "user1", "isLoggedInUser": true}"#
+        if case .string(let text) = message {
             guard let data = text.data(using: .utf8),
                   let chatMessage = try? JSONDecoder().decode(BasicSocketEvent.self, from: data)
             else {

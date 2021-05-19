@@ -38,7 +38,7 @@ struct ConversationListView: View {
                                 ConversationListRow(conversation: conversation)
                             }
                         }
-                        .padding(10)
+                        .padding()
                     }
                 }
 
