@@ -30,7 +30,7 @@ class ConversationListViewModel: ObservableObject {
         service.registerConsumer(
             messageType: "NewConversation",
             consumer: { [weak self] (data: Data) in
-                guard let event = try? JSONDecoder().decode(NewConversationEvent.self, from: data) else {
+                guard let event = try? JSONDecoder.getIsoDateConfiguredInstance().decode(NewConversationEvent.self, from: data) else {
                     return
                 }
                 
@@ -41,8 +41,11 @@ class ConversationListViewModel: ObservableObject {
         )
     }
     
+    func onAppear() {
+        service.send(clientEvent: GetConversationsEvent(data: GetConversationsEvent.GetConversationsEventData()))
+    }
+    
     func matchRequest() {
-        service.send(clientEvent: MatchRequestEvent(action: "MatchRequest",
-                                                    data: MatchRequestEvent.MatchRequestEventData()))
+        service.send(clientEvent: MatchRequestEvent(data: MatchRequestEvent.MatchRequestEventData()))
     }
 }

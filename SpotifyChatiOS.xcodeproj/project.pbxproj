@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C00C3772655660E002FDC0D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3762655660E002FDC0D /* ViewExtensions.swift */; };
+		1C00C3B22655C975002FDC0D /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3B12655C975002FDC0D /* JSONDecoder.swift */; };
+		1C00C3B52655D48B002FDC0D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 1C00C3B42655D48B002FDC0D /* SwiftUIX */; };
 		1C21B4062651D11000639351 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4052651D11000639351 /* RemoteImage.swift */; };
 		1C21B4092651D57F00639351 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4082651D57F00639351 /* Conversation.swift */; };
 		1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B40C2651EEC700639351 /* ConversationDataService.swift */; };
@@ -36,7 +38,7 @@
 		1C4D19AD264DA40600C91A26 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */; };
 		1C5EC883264F1EA20092A157 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EC882264F1EA20092A157 /* LogoutButton.swift */; };
 		1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */; };
-		1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF96264FF127007D876C /* StringExtensions.swift */; };
+		1C6FAF97264FF127007D876C /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF96264FF127007D876C /* DateExtensions.swift */; };
 		1C6FAF99265045ED007D876C /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */; };
 		1CA6649B2655513000418048 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6649A2655513000418048 /* LoadingView.swift */; };
 		1CA6649D26555ECA00418048 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA6649C26555ECA00418048 /* ActivityIndicator.swift */; };
@@ -71,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		1C00C3762655660E002FDC0D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		1C00C3B12655C975002FDC0D /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		1C21B4052651D11000639351 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1C21B4082651D57F00639351 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		1C21B40C2651EEC700639351 /* ConversationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataService.swift; sourceTree = "<group>"; };
@@ -105,7 +108,7 @@
 		1C4D19AC264DA40600C91A26 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1C5EC882264F1EA20092A157 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		1C5EC886264F2CC30092A157 /* ConversationMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMessageRow.swift; sourceTree = "<group>"; };
-		1C6FAF96264FF127007D876C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		1C6FAF96264FF127007D876C /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		1CA6649A2655513000418048 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1CA6649C26555ECA00418048 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C00C3B52655D48B002FDC0D /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +346,10 @@
 		1C6FAF95264FF114007D876C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1C6FAF96264FF127007D876C /* StringExtensions.swift */,
+				1C6FAF96264FF127007D876C /* DateExtensions.swift */,
 				1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */,
 				1C00C3762655660E002FDC0D /* ViewExtensions.swift */,
+				1C00C3B12655C975002FDC0D /* JSONDecoder.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			);
 			name = SpotifyChatiOS;
 			packageProductDependencies = (
+				1C00C3B42655D48B002FDC0D /* SwiftUIX */,
 			);
 			productName = SpotifyChatiOS;
 			productReference = 1C4D1975264D8D5600C91A26 /* SpotifyChatiOS.app */;
@@ -475,6 +481,7 @@
 			);
 			mainGroup = 1C4D196C264D8D5600C91A26;
 			packageReferences = (
+				1C00C3B32655D48B002FDC0D /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 1C4D1976264D8D5600C91A26 /* Products */;
 			projectDirPath = "";
@@ -537,6 +544,7 @@
 				1CA6649B2655513000418048 /* LoadingView.swift in Sources */,
 				1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */,
 				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
+				1C00C3B22655C975002FDC0D /* JSONDecoder.swift in Sources */,
 				1C3A5CA8264DCAA900863F02 /* ConversationDetailViewModel.swift in Sources */,
 				1CC63BAF26534B5100445473 /* DismissConversationEvent.swift in Sources */,
 				1C3A5CA3264DC7E800863F02 /* ConversationView.swift in Sources */,
@@ -554,7 +562,7 @@
 				1C3A5CAD264DCFA600863F02 /* NewConversationMessage.swift in Sources */,
 				1C21B4062651D11000639351 /* RemoteImage.swift in Sources */,
 				1C3A5CB4264DD66100863F02 /* SocketEvent.swift in Sources */,
-				1C6FAF97264FF127007D876C /* StringExtensions.swift in Sources */,
+				1C6FAF97264FF127007D876C /* DateExtensions.swift in Sources */,
 				1CC63BAD26534AA000445473 /* SendMessageEvent.swift in Sources */,
 				1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */,
 			);
@@ -870,6 +878,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C00C3B32655D48B002FDC0D /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C00C3B42655D48B002FDC0D /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C00C3B32655D48B002FDC0D /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C4D196D264D8D5600C91A26 /* Project object */;
 }

@@ -33,6 +33,9 @@ class ConversationDetailViewModel: ObservableObject {
     }
     
     func onAppear() {
+        if let conversationId = conversation?.id {
+            service.send(clientEvent: GetMessagesEvent(data: GetMessagesEvent.GetMessagesEventData(conversation: conversationId)))
+        }
         self.messages = Self.getMessagesOfConversation(conversationId: self.conversation?.id,
                                                        messages: conversationMessageDataService.conversationMessages)
     }
@@ -42,10 +45,16 @@ class ConversationDetailViewModel: ObservableObject {
             let messages = messages[conversationId] {
             return messages.values
                 .sorted(by: { m1, m2 in
-                    m1.date > m2.date
+                    m1.date < m2.date
                 })
         }
         
         return []
+    }
+    
+    func sendMessage(text: String) {
+        guard let conversationId = conversation?.id else { return }
+        service.send(clientEvent: SendMessageEvent(data: SendMessageEvent.SendMessageEventData(conversation: conversationId,
+                                                                                               message: SendMessageEvent.Message(id: "asd", content: text))))
     }
 }

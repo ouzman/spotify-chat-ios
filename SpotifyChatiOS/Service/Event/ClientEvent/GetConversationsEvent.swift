@@ -8,7 +8,8 @@
 import Foundation
 
 struct GetConversationsEvent: ClientEvent {
-    let action: String // GetConversations
+    let action = "GetConversations"
+    let service = "Conversation"
     let data: GetConversationsEventData
     
     struct GetConversationsEventData: Encodable {}

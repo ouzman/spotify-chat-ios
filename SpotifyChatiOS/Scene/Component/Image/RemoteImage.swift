@@ -45,6 +45,7 @@ struct RemoteImage: View {
         selectImage()
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .frame(width: 50, height: 50)
     }
     
     init(url: String?,

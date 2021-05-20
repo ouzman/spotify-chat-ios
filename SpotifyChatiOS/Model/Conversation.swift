@@ -9,7 +9,7 @@ import Foundation
 
 struct Conversation: Decodable {
     let id: String
-    let date: String
+    let date: Date
     let lastMessage: Message?
     let song: Song
     let users: [String: User]
@@ -20,15 +20,16 @@ struct Conversation: Decodable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
+        
         self.id = try values.decode(String.self, forKey: .id)
-        self.date = try values.decode(String.self, forKey: .date)
+        self.date = try values.decode(Date.self, forKey: .date)
         self.lastMessage = try values.decodeIfPresent(Message.self, forKey: .lastMessage)
         self.song = try values.decode(Song.self, forKey: .song)
         let originalUsers = try values.decode([User].self, forKey: .users)
         self.users = Dictionary(uniqueKeysWithValues: originalUsers.map{ ($0.id, $0) })
     }
     
-    init(id: String, date: String, lastMessage: Message, song: Song, users: [String: User]) {
+    init(id: String, date: Date, lastMessage: Message, song: Song, users: [String: User]) {
         self.id = id
         self.lastMessage = lastMessage
         self.date = date
@@ -40,7 +41,7 @@ struct Conversation: Decodable {
         let id: String
         let actorId: String
         let content: String
-        let date: String
+        let date: Date
         
         func fromLoggedInUser() -> Bool {
             self.id == MainViewState.instance.userId

@@ -69,6 +69,9 @@ struct ConversationListView: View {
             .navigationBarItems(trailing: LogoutButton())
             .navigationTitle("Chats")
         }
+        .onAppear(perform: {
+            viewModel.onAppear()
+        })
     }
     
 }

@@ -51,8 +51,9 @@ class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentatio
     func processResponseURL(url: URL) {
         guard let url = URLComponents.init(url: url, resolvingAgainstBaseURL: false) else { return }
         let apiKey = url.queryItems?.first(where: { $0.name == "apikey" })?.value
+        let userId = url.queryItems?.first(where: { $0.name == "userId" })?.value
         MainViewState.instance.apiKey = apiKey
-        MainViewState.instance.userId = "qbe6jIfSSiSkwQhrNXYuLg" // FIXME: get from response
+        MainViewState.instance.userId = userId
         MainViewState.instance.activeScene = .chat
     }
 }

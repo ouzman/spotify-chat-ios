@@ -57,7 +57,7 @@ struct ConversationMessageRow_Previews: PreviewProvider {
                                    message: Conversation.Message(id: "CxBZSRw/QISi4xHC2SQ9mg",
                                                                  actorId: "n0p40O9FSWqxTwn4Nf+D+Q",
                                                                  content: "message content",
-                                                                 date: "2021-05-16T14:28:06.002Z"))                
+                                                                 date: Date()))                
             .previewLayout(.sizeThatFits)
             .padding()
         }

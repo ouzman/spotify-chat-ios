@@ -21,7 +21,7 @@ class ConversationDataService: ObservableObject {
         webSocketService.registerConsumer(
             messageType: "Conversations",
             consumer: { (data: Data) in
-                guard let event = try? JSONDecoder().decode(ConversationsEvent.self, from: data) else {
+                guard let event = try? JSONDecoder.getIsoDateConfiguredInstance().decode(ConversationsEvent.self, from: data) else {
                     return
                 }
                 self.addNewConversations(conversations: event.data.conversations)
@@ -32,7 +32,7 @@ class ConversationDataService: ObservableObject {
             messageType: "NewConversation",
             consumer: { (data: Data) in
                 do {
-                    let event = try JSONDecoder().decode(NewConversationEvent.self, from: data)
+                    let event = try JSONDecoder.getIsoDateConfiguredInstance().decode(NewConversationEvent.self, from: data)
                     self.addNewConversations(conversations: [event.data.conversation])
                 } catch(let error) {
                     print(error)

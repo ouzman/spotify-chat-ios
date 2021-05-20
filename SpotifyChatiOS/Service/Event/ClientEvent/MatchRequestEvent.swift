@@ -8,7 +8,7 @@
 import Foundation
 
 struct MatchRequestEvent: ClientEvent {
-    let action: String
+    let action = "MatchRequest"
     let service = "Match"
     let data: MatchRequestEventData
     

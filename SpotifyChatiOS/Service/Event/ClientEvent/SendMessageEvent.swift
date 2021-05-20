@@ -8,7 +8,8 @@
 import Foundation
 
 struct SendMessageEvent: ClientEvent {
-    let action: String // SendMessage
+    let action = "SendMessage"
+    let service = "Conversation"
     let data: SendMessageEventData
     
     struct SendMessageEventData: Encodable {
