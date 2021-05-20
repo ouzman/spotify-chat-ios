@@ -55,6 +55,10 @@ class ConversationDetailViewModel: ObservableObject {
     func sendMessage(text: String) {
         guard let conversationId = conversation?.id else { return }
         service.send(clientEvent: SendMessageEvent(data: SendMessageEvent.SendMessageEventData(conversation: conversationId,
-                                                                                               message: SendMessageEvent.Message(id: "asd", content: text))))
+                                                                                               message: SendMessageEvent.Message(id: Self.generateId(), content: text))))
+    }
+    
+    static func generateId() -> String {
+        return UUID().asData().base64EncodedString()
     }
 }

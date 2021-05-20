@@ -54,6 +54,7 @@
 		1CC63BB72653517B00445473 /* ClientEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC63BB62653517B00445473 /* ClientEvent.swift */; };
 		1CD1348326504D8A0067CF34 /* ConversationListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1348226504D8A0067CF34 /* ConversationListRow.swift */; };
 		1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD13484265055890067CF34 /* ConversationsEvent.swift */; };
+		F4B9DE272656B3CF00DE997C /* UUIDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B9DE262656B3CF00DE997C /* UUIDExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		1CC63BB62653517B00445473 /* ClientEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEvent.swift; sourceTree = "<group>"; };
 		1CD1348226504D8A0067CF34 /* ConversationListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListRow.swift; sourceTree = "<group>"; };
 		1CD13484265055890067CF34 /* ConversationsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsEvent.swift; sourceTree = "<group>"; };
+		F4B9DE262656B3CF00DE997C /* UUIDExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +358,7 @@
 				1C6FAF98265045ED007D876C /* UIApplicationExtensions.swift */,
 				1C00C3762655660E002FDC0D /* ViewExtensions.swift */,
 				1C00C3B12655C975002FDC0D /* JSONDecoder.swift */,
+				F4B9DE262656B3CF00DE997C /* UUIDExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				1C3A5C94264DAE2100863F02 /* MainViewState.swift in Sources */,
 				1C00C3B22655C975002FDC0D /* JSONDecoder.swift in Sources */,
 				1C3A5CA8264DCAA900863F02 /* ConversationDetailViewModel.swift in Sources */,
+				F4B9DE272656B3CF00DE997C /* UUIDExtensions.swift in Sources */,
 				1CC63BAF26534B5100445473 /* DismissConversationEvent.swift in Sources */,
 				1C3A5CA3264DC7E800863F02 /* ConversationView.swift in Sources */,
 				1C3A5C9F264DB3AB00863F02 /* ConversationListViewModel.swift in Sources */,

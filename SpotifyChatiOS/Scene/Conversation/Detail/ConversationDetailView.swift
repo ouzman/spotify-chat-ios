@@ -124,7 +124,7 @@ public struct PlaceholderStyle: ViewModifier {
     }
 }
 
-struct ConversationDetailView_Previews: PreviewProvider {
+struct ConversationDetailView_Previews: PreviewProvider {    
     static var previews: some View {
         ConversationDetailView(viewModel: ConversationDetailViewModel())
 //            .previewLayout(.sizeThatFits)

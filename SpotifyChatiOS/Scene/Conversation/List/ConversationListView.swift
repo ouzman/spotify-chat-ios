@@ -7,7 +7,6 @@
 
 import SwiftUI
 import Combine
-import ActivityIndicatorView
 
 struct VisualEffectView: UIViewRepresentable {
     var effect: UIVisualEffect?
