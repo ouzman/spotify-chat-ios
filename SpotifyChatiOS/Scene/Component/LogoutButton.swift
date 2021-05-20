@@ -17,6 +17,7 @@ struct LogoutButton: View {
 
     var body: some View {
         Button("Logout", action: { self.showAlert = true })
+            .font(.title3, weight: .semibold)
             .alert(isPresented: $showAlert, content: {
                 Alert(title: Text("Logout"),
                       message: Text("User will be logged out. Are you sure?"),

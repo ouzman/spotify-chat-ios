@@ -64,16 +64,11 @@ struct ConversationDetailView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle(navBarTitle, displayMode: .inline).font(.subheadline).lineLimit(1)
-        .navigationBarItems(leading: backButton,
-                                     trailing: LogoutButton())
+        .navigationBarItems(leading: backButton, trailing: LogoutButton())
         .onAppear {
             viewModel.onAppear()
         }
-        
-    
     }
-    
-   
     
     var backButton: some View {
         Button(action: {
@@ -88,9 +83,7 @@ struct ConversationDetailView: View {
     
     private func scrollToLastMessage(proxy: ScrollViewProxy) {
         if viewModel.messages.last != nil {
-            withAnimation(.easeOut(duration: 0.4)) {
-                proxy.scrollTo(viewModel.messages[viewModel.messages.endIndex - 1])
-            }
+            proxy.scrollTo(viewModel.messages[viewModel.messages.endIndex - 1].id)
         }
     }
     

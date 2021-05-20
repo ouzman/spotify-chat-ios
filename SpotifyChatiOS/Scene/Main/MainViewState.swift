@@ -18,8 +18,14 @@ class MainViewState: ObservableObject {
     static let instance = MainViewState()
 
     private init() {}
-    
+
+    @Published var isLoggedIn = false
+
     @Published var apiKey: String?
     @Published var userId: String?
-    @Published var activeScene: MainScene = .login
+    @Published var activeScene: MainScene = .login {
+        didSet {
+            self.isLoggedIn = activeScene == .chat
+        }
+    }
 }

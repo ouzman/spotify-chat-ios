@@ -42,6 +42,7 @@ class ConversationListViewModel: ObservableObject {
     }
     
     func onAppear() {
+        WebSocketService.instance.connect()
         service.send(clientEvent: GetConversationsEvent(data: GetConversationsEvent.GetConversationsEventData()))
     }
     

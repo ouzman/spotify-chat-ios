@@ -46,7 +46,7 @@ class AuthenticationService: NSObject, ASWebAuthenticationPresentationContextPro
             }
             
             authSession.presentationContextProvider = self
-            authSession.prefersEphemeralWebBrowserSession = false
+            authSession.prefersEphemeralWebBrowserSession = true
             authSession.start()
         }
         

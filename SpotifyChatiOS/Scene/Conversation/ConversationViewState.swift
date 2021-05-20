@@ -14,8 +14,15 @@ enum ConversationScene {
 
 class ConversationViewState: ObservableObject {
     static let instance = ConversationViewState()
-    @Published var activeConversation: Conversation? = nil
-    @Published var activeScene: ConversationScene = .list
+    @Published var isDetailActive = false
     
+    @Published var activeConversation: Conversation? = nil
+    @Published var activeScene: ConversationScene = .list {
+        didSet {
+            isDetailActive = activeScene == .detail
+        }
+    }
+    @Published var activeStateTitle: String = ""
+
     private init() { }
 }

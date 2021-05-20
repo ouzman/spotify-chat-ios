@@ -13,22 +13,18 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Spotify Chat App")
-                NavigationLink(destination: LoginView(viewModel: LoginViewModel()),
-                               tag: MainScene.login,
-                               selection: Binding<MainScene?>($state.activeScene)) {
-                    EmptyView()
-                }.hidden()
+                LoginView(viewModel: LoginViewModel())
+                    .navigationBarHidden(true)
                 
-                NavigationLink(destination: ConversationView()
-                                .environmentObject(ConversationViewState.instance),
-                               tag: MainScene.chat,
-                               selection: Binding<MainScene?>($state.activeScene)) {
-                    EmptyView()
-                }.hidden()
+                NavigationLink(
+                    destination: ConversationView().environmentObject(ConversationViewState.instance),
+                    isActive: $state.isLoggedIn,
+                    label: {
+                        EmptyView()
+                    }).navigationBarHidden(true)
             }
-            .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
         .ignoresSafeArea()
     }
 }

@@ -13,31 +13,20 @@ struct ConversationView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Chat View")
-                NavigationLink(
-                    destination: ConversationListView(
-                        viewModel: ConversationListViewModel()
-                    ),
-                    tag: ConversationScene.list,
-                    selection: Binding<ConversationScene?>($state.activeScene)) {
-                    EmptyView()
-                }.hidden()
+                ConversationListView(
+                    viewModel: ConversationListViewModel()
+                ).navigationBarHidden(true)
                 
                 NavigationLink(
-                    destination: ConversationDetailView(
-                        viewModel: ConversationDetailViewModel()
-                    ),
-                    tag: ConversationScene.detail,
-                    selection: Binding<ConversationScene?>($state.activeScene)) {
-                    EmptyView()
-                }.hidden()
+                    destination: ConversationDetailView(viewModel: ConversationDetailViewModel()),
+                    isActive: $state.isDetailActive,
+                    label: {
+                        EmptyView()
+                    }).navigationBarHidden(true)
             }
-        }       
+        }
         .navigationBarHidden(true)
         .ignoresSafeArea()
-        .onAppear(perform: {
-            WebSocketService.instance.connect()
-        })
     }
 }
 
