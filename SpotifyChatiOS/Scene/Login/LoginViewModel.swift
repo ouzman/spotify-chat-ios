@@ -9,51 +9,31 @@ import Foundation
 import AuthenticationServices
 import Combine
 
-class LoginViewModel: NSObject, ObservableObject, ASWebAuthenticationPresentationContextProviding {
-    let url = URL(string: "https://tp25n41kxj.execute-api.eu-west-1.amazonaws.com/login")!
+class LoginViewModel: NSObject, ObservableObject {
     private var cancellables = Set<AnyCancellable>()
-
-    // MARK: - ASWebAuthenticationPresentationContextProviding
-    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return ASPresentationAnchor()
-    }
     
     func signIn() {
-        let signInPromise = Future<URL, Error> { [weak self] completion in
-            guard let self = self else { return }
-            let authSession = ASWebAuthenticationSession(
-                url: self.url,
-                callbackURLScheme: URL(string: "spotify-chat")?.fragment) { (url, error) in
-                if let error = error {
-                    completion(.failure(error))
-                } else if let url = url {
-                    completion(.success(url))
-                }
-            }
-            
-            authSession.presentationContextProvider = self
-            authSession.prefersEphemeralWebBrowserSession = false
-            authSession.start()
-        }
-        
-        signInPromise.sink { (completion) in
+        AuthenticationService.instance.signIn().sink { (completion) in
             switch completion {
             case .failure:
                 break
             default: break
             }
-        } receiveValue: { (url) in
-            self.processResponseURL(url: url)
+        } receiveValue: { (response) in
+            guard let response = response else {
+                return
+            }
+            self.processAuthenticationResponse(authResponse: response)
         }
         .store(in: &cancellables)
     }
     
-    func processResponseURL(url: URL) {
-        guard let url = URLComponents.init(url: url, resolvingAgainstBaseURL: false) else { return }
-        let apiKey = url.queryItems?.first(where: { $0.name == "apikey" })?.value
-        let userId = url.queryItems?.first(where: { $0.name == "userId" })?.value
-        MainViewState.instance.apiKey = apiKey
-        MainViewState.instance.userId = userId
+    private func processAuthenticationResponse(authResponse: AuthenticationResponse) {
+        UserDefaults.standard.setValue(authResponse.apiKey, forKey: Constants.UserDefaultsKey.ApiKey)
+        UserDefaults.standard.setValue(authResponse.userId, forKey: Constants.UserDefaultsKey.UserId)
+        
+        MainViewState.instance.apiKey = authResponse.apiKey
+        MainViewState.instance.userId = authResponse.userId
         MainViewState.instance.activeScene = .chat
     }
 }

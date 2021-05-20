@@ -10,6 +10,8 @@
 		1C00C3772655660E002FDC0D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3762655660E002FDC0D /* ViewExtensions.swift */; };
 		1C00C3B22655C975002FDC0D /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3B12655C975002FDC0D /* JSONDecoder.swift */; };
 		1C00C3B52655D48B002FDC0D /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 1C00C3B42655D48B002FDC0D /* SwiftUIX */; };
+		1C00C3BD26565022002FDC0D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3BC26565022002FDC0D /* AuthenticationService.swift */; };
+		1C00C3BF2656591D002FDC0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00C3BE2656591D002FDC0D /* Constants.swift */; };
 		1C21B4062651D11000639351 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4052651D11000639351 /* RemoteImage.swift */; };
 		1C21B4092651D57F00639351 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B4082651D57F00639351 /* Conversation.swift */; };
 		1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C21B40C2651EEC700639351 /* ConversationDataService.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		1C00C3762655660E002FDC0D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1C00C3B12655C975002FDC0D /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		1C00C3BC26565022002FDC0D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		1C00C3BE2656591D002FDC0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C21B4052651D11000639351 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		1C21B4082651D57F00639351 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		1C21B40C2651EEC700639351 /* ConversationDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationDataService.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1C4D1978264D8D5700C91A26 /* SpotifyChatiOSApp.swift */,
+				1C00C3BE2656591D002FDC0D /* Constants.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -225,10 +230,11 @@
 		1C3A5CB0264DD38400863F02 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1C00C3BC26565022002FDC0D /* AuthenticationService.swift */,
 				1C3A5CB1264DD3B100863F02 /* WebSocketService.swift */,
-				1C21B4072651D4D800639351 /* Event */,
 				1C21B40C2651EEC700639351 /* ConversationDataService.swift */,
 				1C21B40E2651EEDE00639351 /* ConversationMessageDataService.swift */,
+				1C21B4072651D4D800639351 /* Event */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				1C3A5CA3264DC7E800863F02 /* ConversationView.swift in Sources */,
 				1C3A5C9F264DB3AB00863F02 /* ConversationListViewModel.swift in Sources */,
 				1C5EC887264F2CC30092A157 /* ConversationMessageRow.swift in Sources */,
+				1C00C3BF2656591D002FDC0D /* Constants.swift in Sources */,
 				1C4D1979264D8D5700C91A26 /* SpotifyChatiOSApp.swift in Sources */,
 				1C21B4112651F1B400639351 /* NewConversationEvent.swift in Sources */,
 				1CD13485265055890067CF34 /* ConversationsEvent.swift in Sources */,
@@ -565,6 +572,7 @@
 				1C6FAF97264FF127007D876C /* DateExtensions.swift in Sources */,
 				1CC63BAD26534AA000445473 /* SendMessageEvent.swift in Sources */,
 				1C21B40D2651EEC700639351 /* ConversationDataService.swift in Sources */,
+				1C00C3BD26565022002FDC0D /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
