@@ -54,7 +54,10 @@ struct ConversationListView: View {
 
                     Button(action: {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
-                            showsAlert = true
+                            if (self.viewModel.loading) {
+                                self.viewModel.loading = false
+                                showsAlert = true
+                            }
                         }
                         viewModel.loading = true
                         viewModel.matchRequest()
@@ -72,7 +75,7 @@ struct ConversationListView: View {
                     .cornerRadius(25)
                     .padding()
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .alert(isPresented: Binding<Bool>( get: { self.showsAlert && self.viewModel.loading }, set: { self.showsAlert = $0; self.viewModel.loading = $0 }), title: ":(", message: "Uygun bir eşleşme bulunamadı.")
+                    .alert(isPresented: $showsAlert, title: ":(", message: "Uygun bir eşleşme bulunamadı.")
                 }
             }
         }
