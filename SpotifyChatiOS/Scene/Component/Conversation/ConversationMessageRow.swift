@@ -49,17 +49,48 @@ struct ConversationMessageRow: View {
 }
 
 struct ConversationMessageRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ConversationMessageRow(users: ["qbe6jIfSSiSkwQhrNXYuLg": Conversation.User(id: "qbe6jIfSSiSkwQhrNXYuLg",
-                                                                                       name: "John Doe",
-                                                                                       profilePhotoUrl: "https://i.scdn.co/image/ab67616d0000b273da5658301db50de20d4d6106")],
-                                   message: Conversation.Message(id: "CxBZSRw/QISi4xHC2SQ9mg",
-                                                                 actorId: "n0p40O9FSWqxTwn4Nf+D+Q",
-                                                                 content: "message content",
-                                                                 date: Date()))                
+    static let user1 = Conversation.User(id: "user1",
+                                  name: "Test User 1",
+                                  profilePhotoUrl: nil)
+    static let user2 = Conversation.User(id: "user2",
+                                  name: "Test User 2",
+                                  profilePhotoUrl: nil)
+
+    static let message1 = Conversation.Message(id: "message1",
+                                        actorId: user1.id,
+                                        content: "message content 1",
+                                        date: Date())
+
+    static let message2 = Conversation.Message(id: "message2",
+                                        actorId: user2.id,
+                                        content: "message content 2",
+                                        date: Date())
+
+    init() {
+        
+    }
+    
+    @ViewBuilder static func generatePreviews() -> some View {
+        MainViewState.instance.userId = Self.user1.id
+        
+        return Group {
+            ConversationMessageRow(users: [
+                Self.user1.id: Self.user1,
+                Self.user2.id: Self.user2
+            ],
+                                   message: Self.message1)
+                .previewLayout(.sizeThatFits)
+                .padding()
+
+            ConversationMessageRow(users: [
+                Self.user1.id: Self.user1,
+                Self.user2.id: Self.user2
+            ],
+                                   message: Self.message2)
             .previewLayout(.sizeThatFits)
             .padding()
         }
     }
+    
+    static var previews: some View = Self.generatePreviews()
 }
