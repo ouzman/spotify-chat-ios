@@ -8,35 +8,39 @@
 import SwiftUI
 import Combine
 
+struct ConversationListRowModel {
+    let artistName: String
+    let songName: String
+    let songImage: String?
+    let lastMessageActorName: String?
+    let lastMessageContent: String?
+    let lastUpdatedDate: Date
+}
+
 struct ConversationListRow: View {
-    let conversation: Conversation
+    let conversationListRowModel: ConversationListRowModel
     var title: String {
-        return "\(conversation.song.artist) - \(conversation.song.name)"
+        return "\(conversationListRowModel.artistName) - \(conversationListRowModel.songName)"
     }
     var subtitle: String? {
-        if let lastMessage = conversation.lastMessage {
-            let username = conversation.users[lastMessage.actorId]?.name.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: false)[0] ?? ""
-            
-            return "\(username): \(lastMessage.content)"
-        } else {
+        guard let lastMessageActorName = conversationListRowModel.lastMessageActorName,
+              let lastMessageContent = conversationListRowModel.lastMessageContent else {
             return nil
         }
-    }
-    var date: Date {
-        return conversation.lastMessage?.date ?? conversation.date
+        return "\(lastMessageActorName.split(separator: " ")[0]): \(lastMessageContent)"
     }
     
     var day: String {
-        return date.getDay()
+        return conversationListRowModel.lastUpdatedDate.getDay()
     }
     
     var time: String {
-        return date.getTime()
+        return conversationListRowModel.lastUpdatedDate.getTime()
     }
 
     var body: some View {
         HStack(spacing: 15) {
-            RemoteImage(url: conversation.song.image,
+            RemoteImage(url: conversationListRowModel.songImage,
                         loading: Image("spotify-logo"),
                         failure: Image("spotify-logo"))
                 .clipShape(Circle())
@@ -72,22 +76,12 @@ struct ConversationListRow: View {
 struct ConversationListRow_Previews: PreviewProvider {
     static var previews: some View {
         ConversationListRow(
-            conversation: Conversation(id: "TPmZ8WG4QxGjzdwrR/GjSQ",
-                                       date: Date(),
-                                       lastMessage: Conversation.Message(id: "CxBZSRw/QISi4xHC2SQ9mg",
-                                                                         actorId: "n0p40O9FSWqxTwn4Nf+D+Q",
-                                                                         content: "message content",
-                                                                         date: Date()),
-                                       song: Conversation.Song(id: "11",
-                                                               name: "Master Of Life",
-                                                               artist: "Khruangbin",
-                                                               image: "https://i.scdn.co/image/ab67616d0000b273da5658301db50de20d4d6106"),
-                                       users: ["n0p40O9FSWqxTwn4Nf+D+Q": Conversation.User(id: "n0p40O9FSWqxTwn4Nf+D+Q",
-                                                                                           name: "John Doe",
-                                                                                           profilePhotoUrl: nil),
-                                               "pyB2se26SfCw/07gfmt0MA": Conversation.User(id: "pyB2se26SfCw/07gfmt0MA",
-                                                                                           name: "Jane Doe",
-                                                                                           profilePhotoUrl: "https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10202819517622673&height=300&width=300&ext=1623763736&hash=AeS2I6q5AzzGf92gzBs")]))
+            conversationListRowModel: ConversationListRowModel(artistName: "Khruangbin",
+                                                               songName: "Master Of Life",
+                                                               songImage: "https://i.scdn.co/image/ab67616d0000b273da5658301db50de20d4d6106",
+                                                               lastMessageActorName: "John Doe",
+                                                               lastMessageContent: "message content",
+                                                               lastUpdatedDate: Date()))
             .previewLayout(.sizeThatFits)
             .padding()
     }

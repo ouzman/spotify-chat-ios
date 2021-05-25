@@ -45,7 +45,11 @@ struct ConversationListView: View {
                                     state.activeConversation = conversation
                                     state.activeScene = .detail
                                 }) {
-                                    ConversationListRow(conversation: conversation)
+                                    if let rowModel = viewModel.conversationRowModels[conversation.id] {
+                                        ConversationListRow(conversationListRowModel: rowModel)
+                                    } else {
+                                        EmptyView()
+                                    }
                                 }
                             }
                             .padding()

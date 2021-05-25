@@ -15,7 +15,6 @@ struct ConversationMessageRow: View {
         return self.message.actorId == MainViewState.instance.userId
     }
     
-    
     var body: some View {
         HStack {
             if isMyMessage {
